@@ -10,7 +10,7 @@ namespace Gallery1.Controllers
     public class NavigationController : Controller
     {
         ArtContext db = new ArtContext();
-        public PartialViewResult Menu(string type = null)
+        public PartialViewResult Test2(string type = null)
         {
             ViewBag.SelectedTypes = type;
 

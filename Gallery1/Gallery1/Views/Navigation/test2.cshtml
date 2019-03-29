@@ -1,0 +1,40 @@
+﻿<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/StyleSheet4.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+@model IEnumerable<string>
+<div class="menu"> <span></span> </div>
+<nav id="nav">
+    <ul class="main">
+        <li>
+            @Html.ActionLink("Все типы", "Index", "Home", null,
+     new { @class = "" })
+        </li>
+        <li>
+            @foreach (var link in Model)
+            {
+                @Html.RouteLink(link, new
+                {
+                    controller = "Home",
+                    action = "Index",
+                    type = link,
+                }, new
+                {
+                    @class =""
+                    +(link == ViewBag.SelectedTypes ? "btn-primary" : "")
+                })
+            }
+        </li>
+    </ul>
+</nav>
+<div class="overlay"></div>
+<script>
+    $('.menu, .overlay').click(function () {
+        $('.menu').toggleClass('clicked');
+
+        $('#nav').toggleClass('show');
+
+    });
+</script>

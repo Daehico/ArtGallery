@@ -1,4 +1,9 @@
-﻿.nav {
+﻿/**
+ * Переключаемая боковая панель навигации
+ * выдвигающаяся по клику слева
+ */
+
+.nav {
     /*  ширна произвольная, не стесняйтесь экспериментировать */
     width: 320px;
     min-width: 320px;
@@ -128,6 +133,13 @@
         content: '\2715';
     }
 
+/**
+ * профиксим баг в Android <= 4.1.2
+ * см: http://timpietrusky.com/advanced-checkbox-hack
+ */
+
+
+
 @-webkit-keyframes bugfix {
     to {
         padding: 0;
@@ -210,14 +222,17 @@
  * прикрутим трансфомации и плавные переходы
  */
 
+
 .nav > ul {
     display: block;
     margin: 0;
     padding: 0;
     list-style: none;
+    background: #16a085;
 }
 
     .nav > ul > li {
+        background: #16a085;
         line-height: 2.5;
         opacity: 0;
         -webkit-transform: translateX(-50%);
@@ -374,4 +389,5 @@
     opacity: 1;
     -webkit-transition: opacity .5s, visibility .5s;
     transition: opacity .5s, visibility .5s;
-} */
+}
+*/
