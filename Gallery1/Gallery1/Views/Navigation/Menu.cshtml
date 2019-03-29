@@ -1,29 +1,40 @@
-﻿<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+﻿<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+<link href="~/Content/StyleMenuBar.css" rel="stylesheet" />
 
 
 @model IEnumerable<string>
+<div class="menu"> <span></span> </div>
+<nav id="nav">
+    <ul class="main">
+        <li>
+            @Html.ActionLink("Все типы", "Index", "Home", null,
+            new { @class = "" })
+        </li>
 
-<input type="checkbox" id="nav-toggle" hidden>
-<label for="nav-toggle" class="nav-toggle" @*onclick*@></label>
-
-
-<div class="nav">
-
-    @Html.ActionLink("Все типы", "Index", "Home", null,
-        new { @class = "btn btnblock btn-default btn-lg" })
-
-
-    @foreach (var link in Model)
-    {
-        @Html.RouteLink(link, new
+        @foreach (var link in Model)
         {
-            controller = "Home",
-            action = "Index",
-            type = link,
-        }, new
-        {
-            @class ="btn btnblock btn-default btn-lg"
-            +(link == ViewBag.SelectedTypes ? "btn-primary" : "")
-        })
-    }
-</div>
+            <li>
+                @Html.RouteLink(link, new
+                {
+                    controller = "Home",
+                    action = "Index",
+                    type = link,
+                }, new
+                {
+                    @class =""
+                    +(link == ViewBag.SelectedTypes)
+                })
+            </li>
+        }
+    </ul>
+</nav>
+<div class="overlay"></div>
+<script>
+    $('.menu, .overlay').click(function () {
+        $('.menu').toggleClass('clicked');
+        $('#nav').toggleClass('show');
+    });
+</script>
