@@ -1,13 +1,118 @@
 ﻿@using PagedList.Mvc;
 @model PagedList.IPagedList<Gallery1.Models.ArtWork>
 <link href="~/Content/StyleGallery.css" rel="stylesheet" />
+<link href="~/Content/StyleSlyder.css" rel="stylesheet" />
 
-@{
-    ViewBag.Title = "Представленные работы";
-}
+<div class="slider">
+    <div class="slider-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="mogo-slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner text-center" role="listbox">
+                            <div class="item active">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Template
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to mogo
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Template
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to mogo
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Template
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to mogo
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Template
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to mogo
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#mogo-slider" data-slide-to="0" class="active">
+                                <div class="indicator-inner">
+                                    <span class="number">01</span>
+                                    <span class="text text-uppercase">Intro</span>
+                                </div>
+                            </li>
+                            <li data-target="#mogo-slider" data-slide-to="1">
+                                <div class="indicator-inner">
+                                    <span class="number">02</span>
+                                    <span class="text text-uppercase">Work</span>
+                                </div>
+                            </li>
+                            <li data-target="#mogo-slider" data-slide-to="2">
+                                <div class="indicator-inner">
+                                    <span class="number">03</span>
+                                    <span class="text text-uppercase">About</span>
+                                </div>
+                            </li>
+                            <li data-target="#mogo-slider" data-slide-to="3">
+                                <div class="indicator-inner">
+                                    <span class="number">04</span>
+                                    <span class="text text-uppercase">Contracts</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Таймер перелистывания слайдера*@
+<script>
+    jQuery('#mogo-slider').carousel({
+        interval: 5
+    })
+</script>
+
+
+
 
 <h2>Представленные работы</h2>
-    <p>
+    <p class="search">
         @using (Html.BeginForm("Index", "Home", FormMethod.Get))
         {
             <b>Search By:</b> @Html.RadioButton("SearchBy", "Name") <text>Name</text>

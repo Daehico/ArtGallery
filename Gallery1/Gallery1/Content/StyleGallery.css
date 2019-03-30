@@ -1,6 +1,5 @@
-﻿body
-{
-	background:rgba(198, 225, 255, 0.42);
+﻿body {
+    background: -webkit-linear-gradient(top, rgba(26, 165, 241, 0.25) 0%, rgba(28, 67, 182, 0.52) 100%);
 }
 
 h1
@@ -8,6 +7,10 @@ h1
 	color:#fff;
 	margin:40px 0 60px 0;
 	font-weight:300;
+}
+
+.search {
+    width: 300px;
 }
 
 .our-team-main {
