@@ -30,5 +30,19 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(ArtWork artWork)
+        {
+            db.ArtWorks.Add(artWork);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+       
     }
 }
