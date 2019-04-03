@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Редактировать книгу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Gallery1.Models.ArtWork
+<h2>Книга № @Model.Id</h2>
+@using (Html.BeginForm("EditArts", "Admin", FormMethod.Post))
+{
+    <table class="table table-striped table-condensed table-bordered">
+        <tr>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginWorkName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GenreId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechniqueId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+        </table>
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+            <p>
+                @Html.LabelFor(model => model.WorkName, "Название арта")
+                <br />
+                @Html.EditorFor(model => model.WorkName)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.OriginWorkName)
+                <br />
+                @Html.EditorFor(model => model.OriginWorkName)
+
+            </p>
+            <p>
+                @Html.LabelFor(model => model.CreationDate)
+                <br />
+                @Html.EditorFor(model => model.CreationDate)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Description)
+                <br />
+                @Html.EditorFor(model => model.Description)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Size)
+                <br />
+                @Html.EditorFor(model => model.Size)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.TypeId)
+                <br />
+                @Html.EditorFor(model => model.TypeId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.AuthorId)
+                <br />
+                @Html.EditorFor(model => model.AuthorId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.GenreId)
+                <br />
+                @Html.EditorFor(model => model.GenreId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.SchoolId)
+                <br />
+                @Html.EditorFor(model => model.SchoolId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.TechniqueId)
+                <br />
+                @Html.EditorFor(model => model.TechniqueId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.LocationId)
+                <br />
+                @Html.EditorFor(model => model.LocationId)
+            </p>
+            <p><input type="submit" value="Отправить" /></p>
+        </fieldset>
+        }

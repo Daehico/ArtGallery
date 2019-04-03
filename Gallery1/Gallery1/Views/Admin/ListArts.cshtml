@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Gallery1.Models.ArtWork>
+
+@{
+    ViewBag.Title = "ListArts";
+}
+
+<h2>ListArts</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-danger"})
+</p>*@
+<table class="table table-striped table-condensed table-bordered">
+    <tr>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginWorkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TechniqueId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </th>
+        <th>
+            Options
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="text-center">
+            @item.Id
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginWorkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.TypeId)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.AuthorId)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.GenreId)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.SchoolId)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.TechniqueId)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.LocationId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditArts", new { item.Id }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
