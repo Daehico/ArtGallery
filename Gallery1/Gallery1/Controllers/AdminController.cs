@@ -43,6 +43,28 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
+        [HttpGet]
+        public ActionResult DeleteArt(int id)
+        {
+           ArtWork b = db.ArtWorks.Find(id);
+            if (b == null)
+            {
+                return HttpNotFound();
+            }
+            return View(b);
+        }
        
+        [HttpPost, ActionName("DeleteArt")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+           ArtWork b = db.ArtWorks.Find(id);
+            if (b == null)
+            {
+                return HttpNotFound();
+            }
+            db.ArtWorks.Remove(b);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
     }
 }

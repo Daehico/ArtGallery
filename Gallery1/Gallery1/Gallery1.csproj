@@ -213,6 +213,7 @@
     <Content Include="Views\Admin\ListArts.cshtml" />
     <Content Include="Views\Admin\EditArts.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\DeleteArt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
