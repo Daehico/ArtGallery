@@ -13,25 +13,10 @@
                             <div class="item active">
                                 <div class="slider-content">
                                     <p class="slider-caption">
-                                        Creative Gallery
+                                        Creative Template
                                     </p>
                                     <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to Art Gallery
-                                    </h3>
-                                    <span class="verticle-bar"></span>
-                                    <div class="btn-action">
-                                        <a href="~/User/Login" class="btn btn-primary">Logout</a>
-                                        <a href="~/User/Register" class="btn btn-primary">Register</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="slider-content">
-                                    <p class="slider-caption">
-                                        Creative Gallery
-                                    </p>
-                                    <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to Art Gallery
+                                        Welcome <br> to mogo
                                     </h3>
                                     <span class="verticle-bar"></span>
                                     <div class="btn-action">
@@ -42,10 +27,10 @@
                             <div class="item">
                                 <div class="slider-content">
                                     <p class="slider-caption">
-                                        Creative Gallery
+                                        Creative Template
                                     </p>
                                     <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to Art Gallery
+                                        Welcome <br> to mogo
                                     </h3>
                                     <span class="verticle-bar"></span>
                                     <div class="btn-action">
@@ -56,10 +41,24 @@
                             <div class="item">
                                 <div class="slider-content">
                                     <p class="slider-caption">
-                                        Creative Gallery
+                                        Creative Template
                                     </p>
                                     <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to Art Gallery
+                                        Welcome <br> to mogo
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Template
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to mogo
                                     </h3>
                                     <span class="verticle-bar"></span>
                                     <div class="btn-action">
@@ -176,7 +175,8 @@
                         </div>
                         <div class="team-back">
                             <span>
-                                @Html.ActionLink(item.Description, "ViewArt", new { item.Id })
+                                @*@Html.DisplayFor(modelItem => item.Description)*@
+                                @Html.ActionLink(item.Description, "Reade", new { item.Id })
                             </span>
                         </div>
                     </div>
