@@ -41,10 +41,14 @@ namespace Gallery1.Controllers
                 return View(arts
                     .Where(x => x.WorkName.StartsWith(search) || search == null)
                     .ToList().ToPagedList(page ?? 1, pageSize));
-            } 
+            }  
+        }
 
-            
-            
+        public ViewResult ViewArt(int? Id)
+        {
+            ArtWork artWork = db.ArtWorks.Include(a => a.Author).FirstOrDefault(a => a.Id == Id);
+            //ArtWork artWork = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
+            return View(artWork);
         }
 
         public ActionResult About()

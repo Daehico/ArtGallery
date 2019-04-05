@@ -1,0 +1,55 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Cookie|Raleway:300,700,400);
+
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Vibur', cursive;
+    font-family: 'Abel', sans-serif;
+    opacity: .95;
+}
+
+h1 {
+    font-size: 6em;
+    text-align: center;
+    font-family: 'Cookie', cursive;
+}
+
+p {
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+img{
+    align-content:center;
+    width:20px;
+    height:20px;
+}
+
+form-group {
+    text-align: right;
+}
+
+form {
+    width: 500px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+}
+
+input{
+    margin-left: 15%;
+}
+
+.submits {
+    width: 40%;
+    float: right;
+    margin-right: 7%;
+    color: #6fcac6;
+    background: #E3FDF5;
+}

@@ -3,6 +3,9 @@
 .slider {
     position: relative;
 }
+a{
+    margin: 5px;
+}
 
     .slider:after {
         content: "";

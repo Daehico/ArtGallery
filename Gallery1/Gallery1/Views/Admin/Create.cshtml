@@ -1,0 +1,56 @@
+﻿@model Gallery1.Models.ArtWork
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Новый арт</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.WorkName, "Название арта")
+    <br />
+    @Html.EditorFor(model => model.WorkName)
+    <br /><br />
+    @Html.LabelFor(model => model.OriginWorkName)
+    <br />
+    @Html.EditorFor(model => model.OriginWorkName)
+    <br /><br />
+    @Html.LabelFor(model => model.CreationDate)
+    <br />
+    @Html.EditorFor(model => model.CreationDate)
+    <br /><br />
+    @Html.LabelFor(model => model.Description)
+    <br />
+    @Html.EditorFor(model => model.Description)
+    <br /><br />
+    @Html.LabelFor(model => model.Size)
+    <br />
+    @Html.EditorFor(model => model.Size)
+    <br /><br />
+    @Html.LabelFor(model => model.Price)
+    <br />
+    @Html.EditorFor(model => model.Price)
+    <br /><br />
+    @Html.LabelFor(model => model.TypeId)
+    <br />
+    @Html.EditorFor(model => model.TypeId)
+    <br /><br />
+    @Html.LabelFor(model => model.GenreId)
+    <br />
+    @Html.EditorFor(model => model.GenreId)
+    <br /><br />
+    @Html.LabelFor(model => model.SchoolId)
+    <br />
+    @Html.EditorFor(model => model.SchoolId)
+    <br /><br />
+    @Html.LabelFor(model => model.TechniqueId)
+    <br />
+    @Html.EditorFor(model => model.TechniqueId)
+    <br /><br />
+    @Html.LabelFor(model => model.LocationId)
+    <br />
+    @Html.EditorFor(model => model.LocationId)
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}
