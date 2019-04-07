@@ -66,5 +66,18 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
+              
+        [HttpGet]
+        public ActionResult CreateAuthor()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateAuthor(Author author)
+        {
+            db.Authors.Add(author);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
     }
 }

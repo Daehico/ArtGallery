@@ -17,61 +17,62 @@
                 @Html.EditorFor(model => model.WorkName)
             </p>
             <p>
-                @Html.LabelFor(model => model.OriginWorkName)
+                @Html.LabelFor(model => model.OriginWorkName, "Настоящие название арта")
                 <br />
                 @Html.EditorFor(model => model.OriginWorkName)
             </p>
             <p>
-                @Html.LabelFor(model => model.CreationDate)
+                @Html.LabelFor(model => model.CreationDate, "Дата создания")
                 <br />
                 @Html.EditorFor(model => model.CreationDate)
             </p>
             <p>
-                @Html.LabelFor(model => model.Description)
+                @Html.LabelFor(model => model.Description, "Описание арта")
                 <br />
                 @Html.EditorFor(model => model.Description)
             </p>
             <p>
-                @Html.LabelFor(model => model.Size)
+                @Html.LabelFor(model => model.Size, "Стоимость арта")
                 <br />
                 @Html.EditorFor(model => model.Size)
             </p>
-            <p>
-                @Html.LabelFor(model => model.TypeId)
-                <br />
-                @Html.EditorFor(model => model.TypeId)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.AuthorId)
-                <br />
-                @Html.EditorFor(model => model.AuthorId)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.GenreId)
-                <br />
-                @Html.EditorFor(model => model.GenreId)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.SchoolId)
-                <br />
-                @Html.EditorFor(model => model.SchoolId)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.TechniqueId)
-                <br />
-                @Html.EditorFor(model => model.TechniqueId)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.LocationId)
-                <br />
-                @Html.EditorFor(model => model.LocationId)
-            </p>
+            
             <p><input type="submit" value="Отправить" /></p>
         </fieldset>
     </div>
     <div class="admin-center">
         <fieldset>
-
+            <p>
+                @Html.LabelFor(model => model.TypeId, "Внешний ключ типа арта")
+                <br />
+                @Html.EditorFor(model => model.TypeId)
+            </p>
+            <p>
+                @Html.ActionLink("Create new author", "CreateAuthor")
+                @Html.LabelFor(model => model.AuthorId, "Внешний ключ автора арта")
+                <br />
+                @Html.EditorFor(model => model.AuthorId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.GenreId, "Внешний ключ жанра")
+                <br />
+                @Html.EditorFor(model => model.GenreId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.SchoolId, "Внешний ключ школы арта")
+                <br />
+                @Html.EditorFor(model => model.SchoolId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.TechniqueId, "Внешний ключ технологии создания арта")
+                <br />
+                @Html.EditorFor(model => model.TechniqueId)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.LocationId, "Внешний ключ для хранения работы")
+                <br />
+                @Html.EditorFor(model => model.LocationId)
+            </p>
         </fieldset>
     </div>
     <div class="admin-upload-img">

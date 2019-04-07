@@ -1,0 +1,37 @@
+﻿@model Gallery1.Models.Author
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.NameAuthor, "Имя автора")
+    <br />
+    @Html.EditorFor(model => model.NameAuthor, "Имя автора")
+    <br /><br />
+    @Html.LabelFor(model => model.Pseudonum, "Псведоним")
+    <br />
+    @Html.EditorFor(model => model.Pseudonum)
+    <br /><br />
+    @Html.LabelFor(model => model.DateOfBirth, "Дата рождения")
+    <br />
+    @Html.EditorFor(model => model.DateOfBirth)
+    <br /><br />
+    @Html.LabelFor(model => model.DateOfDeath, "Дата смерти")
+    <br />
+    @Html.EditorFor(model => model.DateOfDeath)
+    <br /><br />
+    @Html.LabelFor(model => model.Biography, "Биография")
+    <br />
+    @Html.EditorFor(model => model.Biography)
+    <br /><br />
+    @Html.LabelFor(model => model.Education, "Образование")
+    <br />
+    @Html.EditorFor(model => model.Education)
+    <br /><br />
+    @Html.LabelFor(model => model.Sex, "Пол")
+    <br />
+    @Html.EditorFor(model => model.Sex)
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}
