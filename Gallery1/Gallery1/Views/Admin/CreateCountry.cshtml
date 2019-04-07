@@ -1,0 +1,27 @@
+﻿
+@model Gallery1.Models.Country
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.CountryName)
+    <br />
+    @Html.EditorFor(model => model.CountryName)
+    <br /><br />
+    @Html.LabelFor(model => model.DescriptionCountry)
+    <br />
+    @Html.EditorFor(model => model.DescriptionCountry)
+    <br /><br />
+    @Html.LabelFor(model => model.Capital)
+    <br />
+    @Html.EditorFor(model => model.Capital)
+    <br /><br />
+    @Html.LabelFor(model => model.Language)
+    <br />
+    @Html.EditorFor(model => model.Language)
+    <br /><br />
+
+    <input type="submit" value="Добавить" />
+}

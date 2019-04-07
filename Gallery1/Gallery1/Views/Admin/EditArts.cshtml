@@ -43,6 +43,7 @@
     <div class="admin-center">
         <fieldset>
             <p>
+                @Html.ActionLink("Create new type", "CreateType")
                 @Html.LabelFor(model => model.TypeId, "Внешний ключ типа арта")
                 <br />
                 @Html.EditorFor(model => model.TypeId)
@@ -54,21 +55,25 @@
                 @Html.EditorFor(model => model.AuthorId)
             </p>
             <p>
+                @Html.ActionLink("Create new type", "CreateGenre")
                 @Html.LabelFor(model => model.GenreId, "Внешний ключ жанра")
                 <br />
                 @Html.EditorFor(model => model.GenreId)
             </p>
             <p>
+                @Html.ActionLink("Create new type", "CreateSchool")
                 @Html.LabelFor(model => model.SchoolId, "Внешний ключ школы арта")
                 <br />
                 @Html.EditorFor(model => model.SchoolId)
             </p>
             <p>
+                @Html.ActionLink("Create new type", "CreateTechnique")
                 @Html.LabelFor(model => model.TechniqueId, "Внешний ключ технологии создания арта")
                 <br />
                 @Html.EditorFor(model => model.TechniqueId)
             </p>
             <p>
+                @Html.ActionLink("Create new type", "CreateLocation")
                 @Html.LabelFor(model => model.LocationId, "Внешний ключ для хранения работы")
                 <br />
                 @Html.EditorFor(model => model.LocationId)

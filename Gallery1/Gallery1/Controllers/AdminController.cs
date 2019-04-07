@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Type = Gallery1.Models.Type;
 
 namespace Gallery1.Controllers
 {
@@ -66,7 +67,20 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
-              
+
+        [HttpGet]
+        public ActionResult CreateType()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateType(Type type)
+        {
+            db.Types.Add(type);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+
         [HttpGet]
         public ActionResult CreateAuthor()
         {
@@ -76,6 +90,84 @@ namespace Gallery1.Controllers
         public ActionResult CreateAuthor(Author author)
         {
             db.Authors.Add(author);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+       
+        [HttpGet]
+        public ActionResult CreateGenre()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateGenre(Genre genre)
+        {
+            db.Genres.Add(genre);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+
+        [HttpGet]
+        public ActionResult CreateSchool()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateSchool(School school)
+        {
+            db.Schools.Add(school);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+
+        [HttpGet]
+        public ActionResult CreateTechnique()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateTechnique(Technique technique)
+        {
+            db.Techniques.Add(technique);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+
+        [HttpGet]
+        public ActionResult CreateLocation()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateLocation(Location location)
+        {
+            db.Locations.Add(location);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+
+        [HttpGet]
+        public ActionResult CreateCity()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateCity(City city)
+        {
+            db.Cities.Add(city);
+            db.SaveChanges();
+            return RedirectToAction("ListArts");
+        }
+
+        [HttpGet]
+        public ActionResult CreateCountry()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateCountry(Country country)
+        {
+            db.Countries.Add(country);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }

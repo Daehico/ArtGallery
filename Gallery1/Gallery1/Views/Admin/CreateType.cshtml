@@ -1,0 +1,17 @@
+﻿@model Gallery1.Models.Type
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.TypeName)
+    <br />
+    @Html.EditorFor(model => model.TypeName)
+    <br /><br />
+    @Html.LabelFor(model => model.TypeDate)
+    <br />
+    @Html.EditorFor(model => model.TypeDate)
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}

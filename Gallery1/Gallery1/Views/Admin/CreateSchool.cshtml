@@ -1,0 +1,21 @@
+﻿@model Gallery1.Models.School
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.SchoolName)
+    <br />
+    @Html.EditorFor(model => model.SchoolName)
+    <br /><br />
+    @Html.LabelFor(model => model.Description)
+    <br />
+    @Html.EditorFor(model => model.Description)
+    <br /><br />
+    @Html.LabelFor(model => model.CreationDateOfSchool)
+    <br />
+    @Html.EditorFor(model => model.CreationDateOfSchool)
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}

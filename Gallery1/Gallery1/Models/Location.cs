@@ -18,7 +18,7 @@ namespace Gallery1.Models
             ArtWorks = new List<ArtWork>();
         }
 
-        //внешний ключ для типа мечта хранения 
+        //внешний ключ для типа меcта хранения 
         public int? TypeLocationId { get; set; }
         public TypeLocation TypeLocation { get; set; }
 

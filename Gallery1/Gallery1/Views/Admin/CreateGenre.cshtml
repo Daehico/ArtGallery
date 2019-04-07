@@ -1,0 +1,19 @@
+﻿@model Gallery1.Models.Genre
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.GenreName, "Название жанра")
+    <br />
+    @Html.EditorFor(model => model.GenreName)
+    <br /><br />
+    @Html.LabelFor(model => model.GenreDescription, "Описание жанра")
+    <br />
+    @Html.EditorFor(model => model.GenreDescription)
+    <br /><br />
+
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}

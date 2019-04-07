@@ -1,0 +1,27 @@
+﻿@model Gallery1.Models.Location
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.LocationName)
+    <br />
+    @Html.EditorFor(model => model.LocationName)
+    <br /><br />
+    @Html.LabelFor(model => model.LocationDescription)
+    <br />
+    @Html.EditorFor(model => model.LocationDescription)
+    <br /><br />
+    @Html.LabelFor(model => model.TypeLocationId)
+    <br />
+    @Html.EditorFor(model => model.TypeLocationId)
+    <br /><br />
+    @Html.ActionLink("Create city","CreateCity")
+    @Html.LabelFor(model => model.CityId)
+    <br />
+    @Html.EditorFor(model => model.CityId)
+    <br /><br />
+
+    <input type="submit" value="Добавить" />
+}
