@@ -1,42 +1,64 @@
 ﻿body {
-    background: -webkit-linear-gradient(top, rgba(26, 165, 241, 0.25) 0%, rgba(28, 67, 182, 0.52) 100%);
+
     width:100%;
-    height:1500px;
 }
 .admin {
     width: 100%;
-    height: 1200px;
+    height: 800px;
     position: absolute;
 }
 .admin-right {
-    width: 20%;
-    height: 1000px;
-    background: yellow;
+    width: 25%;
+    height: 700px;
+    background: #c9c1e8;
     padding-left: 5%;
-    padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
-    position:absolute;
+    position: absolute;
+    margin-left:10%;
 }
 .admin-center {
-    margin-left: 30%;
-    width: 20%;
-    height: 1000px;
-    background: green;
+    margin-left: 40%;
+    width: 25%;
+    height: 700px;
+    background: #f0e5b2;
     padding-left: 5%;
-    padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
     position: absolute;
     margin-bottom: 200%;
+    font-size:18px;
 }
 .admin-upload-img {
-    margin-left: 60%;
-    background: white;
-    width: 20%;
+    margin-left: 70%;
+    background: #ffb0ca;
+    width: 25%;
     height: 200px;
     padding-left: 5%;
-    padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
 }
+p{
+    font-size:14px;
+}
+details summary {
+    display: block; /* у summary по умолчанию свойство display в значении list-item, потому поддерживается свойство list-style */
+    width: 10em;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    border-bottom: 1px dotted; /* подводка точками или тире часто используется для элементов, с которыми пользователю предлагается взаимодействовать, можно заменить на text-decoration */
+    width: fit-content; /* блок раскрывается при щелчке по кнопке, а не по всей строке */
+    outline-style: none; /* удалить обводку при фокусе */
+    cursor: pointer;
+}
+
+    details summary::-webkit-details-marker { /* нестандартный псевдоэлемент Google Chrome */
+        display: none;
+    }
+    input{
+        width: 450px;
+    }
+    h2 {
+        padding-left:10%;
+        padding-bottom:2%;
+    }

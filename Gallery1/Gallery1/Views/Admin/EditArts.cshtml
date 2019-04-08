@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Редактировать книгу";
+    ViewBag.Title = "Редактировать арт";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/admin.css" rel="stylesheet" />
@@ -42,42 +42,71 @@
     </div>
     <div class="admin-center">
         <fieldset>
-            <p>
-                @Html.ActionLink("Create new type", "CreateType")
-                @Html.LabelFor(model => model.TypeId, "Внешний ключ типа арта")
-                <br />
-                @Html.EditorFor(model => model.TypeId)
-            </p>
-            <p>
-                @Html.ActionLink("Create new author", "CreateAuthor")
-                @Html.LabelFor(model => model.AuthorId, "Внешний ключ автора арта")
-                <br />
-                @Html.EditorFor(model => model.AuthorId)
-            </p>
-            <p>
-                @Html.ActionLink("Create new type", "CreateGenre")
-                @Html.LabelFor(model => model.GenreId, "Внешний ключ жанра")
-                <br />
-                @Html.EditorFor(model => model.GenreId)
-            </p>
-            <p>
-                @Html.ActionLink("Create new type", "CreateSchool")
-                @Html.LabelFor(model => model.SchoolId, "Внешний ключ школы арта")
-                <br />
-                @Html.EditorFor(model => model.SchoolId)
-            </p>
-            <p>
-                @Html.ActionLink("Create new type", "CreateTechnique")
-                @Html.LabelFor(model => model.TechniqueId, "Внешний ключ технологии создания арта")
-                <br />
-                @Html.EditorFor(model => model.TechniqueId)
-            </p>
-            <p>
-                @Html.ActionLink("Create new type", "CreateLocation")
-                @Html.LabelFor(model => model.LocationId, "Внешний ключ для хранения работы")
-                <br />
-                @Html.EditorFor(model => model.LocationId)
-            </p>
+            <details>
+                <summary>Выберите тип</summary>
+                <p>
+                    @Html.ActionLink("Create new type", "CreateType")
+                    <br />
+                    @Html.LabelFor(model => model.TypeId, "Внешний ключ типа арта")
+                    <br />
+                    @Html.EditorFor(model => model.TypeId)
+                </p>
+            </details>
+            <br />
+            <details>
+                <summary>Выберите автора</summary>
+                <p>
+                    @Html.ActionLink("Create new author", "CreateAuthor")
+                    <br />
+                    @Html.LabelFor(model => model.AuthorId, "Внешний ключ автора арта")
+                    <br />
+                    @Html.EditorFor(model => model.AuthorId)
+                </p>
+            </details>
+            <br />
+            <details>
+                <summary>Выберите жанр</summary>
+                <p>
+                    @Html.ActionLink("Create new type", "CreateGenre")
+                    <br />
+                    @Html.LabelFor(model => model.GenreId, "Внешний ключ жанра")
+                    <br />
+                    @Html.EditorFor(model => model.GenreId)
+                </p>
+            </details>
+            <br />
+            <details>
+                <summary>Выберите школу</summary>
+                <p>
+                    @Html.ActionLink("Create new type", "CreateSchool")
+                    <br />
+                    @Html.LabelFor(model => model.SchoolId, "Внешний ключ школы арта")
+                    <br />
+                    @Html.EditorFor(model => model.SchoolId)
+                </p>
+            </details>
+            <br />
+            <details>
+                <summary>Выберите технику</summary>
+                <p>
+                    @Html.ActionLink("Create new type", "CreateTechnique")
+                    <br />
+                    @Html.LabelFor(model => model.TechniqueId, "Внешний ключ технологии создания арта")
+                    <br />
+                    @Html.EditorFor(model => model.TechniqueId)
+                </p>
+            </details>
+            <br />
+            <details>
+                <summary>Выберите локацию</summary>
+                <p>
+                    @Html.ActionLink("Create new type", "CreateLocation")
+                    <br />
+                    @Html.LabelFor(model => model.LocationId, "Внешний ключ для хранения работы")
+                    <br />
+                    @Html.EditorFor(model => model.LocationId)
+                </p>
+            </details>
         </fieldset>
     </div>
     <div class="admin-upload-img">
