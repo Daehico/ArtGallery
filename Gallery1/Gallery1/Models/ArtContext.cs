@@ -18,6 +18,8 @@ namespace Gallery1.Models
         public DbSet<TypeLocation> TypeLocations { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<PhotoArt> PhotoArts { get; set; }
+        public DbSet<PhotoLocation> PhotoLocations { get; set; }
 
     }
 }

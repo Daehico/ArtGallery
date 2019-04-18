@@ -22,6 +22,7 @@ namespace Gallery1.Controllers
                 .Include(a => a.Type)
                 .Include(a => a.School)
                 .Include(a => a.Location.City.Country)
+                .Include(a=> a.PhotoArt)
                 .Include(a => a.Genre);
             //кнопки жанров
             if(type != null)
@@ -41,10 +42,17 @@ namespace Gallery1.Controllers
                 return View(arts
                     .Where(x => x.WorkName.StartsWith(search) || search == null)
                     .ToList().ToPagedList(page ?? 1, pageSize));
-            } 
+            }  
+        }
 
-            
-            
+        public ViewResult ViewArt(int? Id)
+        {
+            ArtWork artWork = db.ArtWorks
+                .Include(a => a.Author)
+                .Include(a => a.Type)
+                .FirstOrDefault(a => a.Id == Id);
+            //ArtWork artWork = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
+            return View(artWork);
         }
 
         public ActionResult About()

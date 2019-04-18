@@ -13,10 +13,34 @@
                             <div class="item active">
                                 <div class="slider-content">
                                     <p class="slider-caption">
-                                        Creative Template
+                                        Creative Gallery
                                     </p>
                                     <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to mogo
+                                        Welcome <br> to Art Gallery
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    @if (this.User.Identity.IsAuthenticated)
+                                    {
+                                        <div class="btn-action">
+                                            <a href="~/User/LogOff" class="btn btn-primary">LogOff</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="btn-action">
+                                            <a href="~/User/Login" class="btn btn-primary">Logout</a>
+                                            <a href="~/User/Register" class="btn btn-primary">Register</a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Gallery
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to Art Gallery
                                     </h3>
                                     <span class="verticle-bar"></span>
                                     <div class="btn-action">
@@ -27,10 +51,10 @@
                             <div class="item">
                                 <div class="slider-content">
                                     <p class="slider-caption">
-                                        Creative Template
+                                        Creative Gallery
                                     </p>
                                     <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to mogo
+                                        Welcome <br> to Art Gallery
                                     </h3>
                                     <span class="verticle-bar"></span>
                                     <div class="btn-action">
@@ -41,24 +65,10 @@
                             <div class="item">
                                 <div class="slider-content">
                                     <p class="slider-caption">
-                                        Creative Template
+                                        Creative Gallery
                                     </p>
                                     <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to mogo
-                                    </h3>
-                                    <span class="verticle-bar"></span>
-                                    <div class="btn-action">
-                                        <a href="#" class="btn btn-primary">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="slider-content">
-                                    <p class="slider-caption">
-                                        Creative Template
-                                    </p>
-                                    <h3 class="slider-titile text-uppercase">
-                                        Welcome <br> to mogo
+                                        Welcome <br> to Art Gallery
                                     </h3>
                                     <span class="verticle-bar"></span>
                                     <div class="btn-action">
@@ -104,7 +114,7 @@
 @*Таймер перелистывания слайдера*@
 <script>
     jQuery('#mogo-slider').carousel({
-        interval: 5
+        interval: 2
     })
 </script>
 
@@ -175,8 +185,7 @@
                         </div>
                         <div class="team-back">
                             <span>
-                                @*@Html.DisplayFor(modelItem => item.Description)*@
-                                @Html.ActionLink(item.Description, "Reade", new { item.Id })
+                                @Html.ActionLink(item.Description, "ViewArt", new { item.Id })
                             </span>
                         </div>
                     </div>
@@ -186,5 +195,5 @@
     }
 </div>
 
-    Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

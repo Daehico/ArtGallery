@@ -8,8 +8,8 @@ namespace Gallery1.Models
     public class Role
     {
         public int Id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
+        public string Role_type { get; set; }
+        public string Description_role { get; set; }
 
         public ICollection<User> Users { get; set; }
 

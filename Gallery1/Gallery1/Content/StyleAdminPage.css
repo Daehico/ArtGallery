@@ -1,0 +1,38 @@
+﻿h2 {
+    padding-left: 7%;
+    padding-bottom: 1%;
+}
+.first_col {
+    margin-left: 33%;
+    width: 500px;
+    position: absolute;
+}
+
+    .first_col .container {
+        width: 100%;
+    }
+
+        .first_col .container .fluid-row img {
+            padding-bottom: 1%;
+            width: 3%;
+            height: 3%
+        }
+
+.second_col {
+    margin-left: 68%;
+    position: absolute;
+}
+
+    .second_col img {
+        max-width: 350px;
+        height: 350px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+.second_col .input {
+    margin-top: 20px;
+}
+
+
+

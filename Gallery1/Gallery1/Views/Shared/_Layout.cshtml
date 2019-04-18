@@ -1,34 +1,51 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <title>@ViewBag.Title – приложение ASP.NET</title>
+    <title>Creative Gallery</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left" style="margin-left:15px">
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
                     <li>@Html.ActionLink("О программе", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Админ.панель", "ListArts", "Admin")</li>
+                    @*@if (this.User.IsInRole("Администратор"))*@
+                    @*{*@
+                        <li>@Html.ActionLink("Админ.панель", "ListArts", "Admin")</li>
+                    @*}*@
                 </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right:15px">
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Выход", "LogOff", "User")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Вход", "Login", "User")</li>
+                        <li>@Html.ActionLink("Регистрация", "Register", "User")</li>
+                    }
+
+                </ul>
+                <div class="nav navbar-text navbar-right" style="margin-top:1.20%">
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <b>Ваш логин: @this.User.Identity.Name &emsp;</b>
+                    }
+                    else
+                    {
+                        <b>  </b>
+                    }
+                </div>
+
             </div>
-        </div>
     </div>
     <div class="row panel">
         <div id="types" class="col-xs-3">

@@ -3,6 +3,7 @@ using Gallery1.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,28 +16,62 @@ namespace Gallery1.Controllers
         ArtContext db = new ArtContext();
         public ActionResult ListArts()
         {
-            return View(db.ArtWorks);
+            return View(db.ArtWorks
+                .Include(a => a.Type)
+                .Include(a => a.Author)
+                .Include(a => a.Genre)
+                .Include(a => a.Location)
+                .Include(a => a.Technique)
+                .Include(a => a.School));
         }
 
         public ViewResult EditArts(int Id)
         {
-            ArtWork artWork = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
-            return View(artWork);
+            using (ArtContext db = new ArtContext())
+            {
+                var model = new EditModel
+                {
+                    ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id),
+                    Authors = db.Authors.ToList()
+                };
+                return View(model);
+            }
+            //ArtWork artWork = db.ArtWorks.Include(a => a.Author)
+            //    .FirstOrDefault(a => a.Id == Id);
+            //return View(artWork);
         }
 
         [HttpPost]
-        public ActionResult EditArts(ArtWork artWork)
+        public ActionResult EditArts(EditModel model, HttpPostedFile uploadImage)
         {
-            db.Entry(artWork).State = EntityState.Modified;
-            db.SaveChanges();
+            if (ModelState.IsValid && uploadImage != null)
+            {
+                byte[] imageData = null;
+                // считываем переданный файл в массив байтов
+                using (var binaryReader = new BinaryReader(uploadImage.InputStream))
+                {
+                    imageData = binaryReader.ReadBytes(uploadImage.ContentLength);
+                }
+                // установка массива байтов
+                model.PhotoArt.Photo = imageData;
+                PhotoArt photoArt = model.PhotoArt;
+
+                db.PhotoArts.Add(photoArt);
+                db.Entry(model.ArtWorks).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("ListArts");
+            }
             return RedirectToAction("ListArts");
         }
+
+
 
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(ArtWork artWork)
         {
@@ -44,21 +79,22 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
+
         [HttpGet]
         public ActionResult DeleteArt(int id)
         {
-           ArtWork b = db.ArtWorks.Find(id);
+            ArtWork b = db.ArtWorks.Find(id);
             if (b == null)
             {
                 return HttpNotFound();
             }
             return View(b);
         }
-       
+
         [HttpPost, ActionName("DeleteArt")]
         public ActionResult DeleteConfirmed(int id)
         {
-           ArtWork b = db.ArtWorks.Find(id);
+            ArtWork b = db.ArtWorks.Find(id);
             if (b == null)
             {
                 return HttpNotFound();
@@ -93,7 +129,7 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
-       
+
         [HttpGet]
         public ActionResult CreateGenre()
         {

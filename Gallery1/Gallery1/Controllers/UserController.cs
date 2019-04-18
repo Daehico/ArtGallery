@@ -73,7 +73,7 @@ namespace Gallery1.Controllers
                     if (user != null)
                     {
                         FormsAuthentication.SetAuthCookie(model.Login, true);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Login", "User");
                     }
                 }
                 else
