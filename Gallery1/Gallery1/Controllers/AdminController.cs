@@ -3,7 +3,6 @@ using Gallery1.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,6 +13,7 @@ namespace Gallery1.Controllers
     public class AdminController : Controller
     {
         ArtContext db = new ArtContext();
+        PhotoArt dbtest = new PhotoArt();
         public ActionResult ListArts()
         {
             return View(db.ArtWorks
@@ -25,6 +25,8 @@ namespace Gallery1.Controllers
                 .Include(a => a.School));
         }
 
+      
+
         public ViewResult EditArts(int Id)
         {
             using (ArtContext db = new ArtContext())
@@ -32,7 +34,8 @@ namespace Gallery1.Controllers
                 var model = new EditModel
                 {
                     ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id),
-                    Authors = db.Authors.ToList()
+                    Authors = db.Authors.ToList(),
+                    PhotoArt = db.PhotoArts.FirstOrDefault(a => a.Id == Id)
                 };
                 return View(model);
             }
@@ -42,29 +45,26 @@ namespace Gallery1.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditArts(EditModel model, HttpPostedFile uploadImage)
+        public ActionResult EditArts(ArtWork editModel, HttpPostedFileBase upload, int Id)
         {
-            if (ModelState.IsValid && uploadImage != null)
+            if (upload != null)
             {
-                byte[] imageData = null;
-                // считываем переданный файл в массив байтов
-                using (var binaryReader = new BinaryReader(uploadImage.InputStream))
+                string fileName = System.IO.Path.GetFileName(upload.FileName);
+                upload.SaveAs(Server.MapPath("~/Files/" + fileName));
+                int photoId;
+                using (ArtContext db1 = new ArtContext())
                 {
-                    imageData = binaryReader.ReadBytes(uploadImage.ContentLength);
+                    PhotoArt p1 = new PhotoArt { PhotoName = fileName , Photo = Server.MapPath("~/ Files / " + fileName) };
+                    db1.PhotoArts.Add(p1);
+                    db1.SaveChanges();  
+                    photoId = p1.Id;
+                    ArtWork artWork = db1.ArtWorks.Where(p => p.Id == Id).FirstOrDefault();
+                    artWork.PhotoArtId = photoId;
+                    db1.SaveChanges();
                 }
-                // установка массива байтов
-                model.PhotoArt.Photo = imageData;
-                PhotoArt photoArt = model.PhotoArt;
-
-                db.PhotoArts.Add(photoArt);
-                db.Entry(model.ArtWorks).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("ListArts");
             }
             return RedirectToAction("ListArts");
         }
-
-
 
         [HttpGet]
         public ActionResult Create()
