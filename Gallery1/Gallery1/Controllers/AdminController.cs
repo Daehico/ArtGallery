@@ -63,6 +63,11 @@ namespace Gallery1.Controllers
                     db1.SaveChanges();
                 }
             }
+            else
+            {
+                db.Entry(editModel).State = EntityState.Modified;
+                db.SaveChanges();
+            }
             return RedirectToAction("ListArts");
         }
 

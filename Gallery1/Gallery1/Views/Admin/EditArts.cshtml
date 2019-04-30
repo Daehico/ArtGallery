@@ -6,7 +6,7 @@
 }
 <h2>Арт: @Model.ArtWorks.WorkName</h2>
 <link rel="icon" href="@Url.Content("~/image/4.ico")" />
-@using (Html.BeginForm("EditArts", "Admin",Model.ArtWorks.Id, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("EditArts", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     <div class="form-group col-lg-10">
@@ -36,8 +36,8 @@
                 <label>Цена:</label>
                 @Html.TextBoxFor(model => model.ArtWorks.Price, new { @class = "form-control" })
             </div>
-            <button name="action" value="editArt">Click Me</button>
             <input type="submit" value="Отправить" class="btn btn-primary" />
+            
         </div>
     </div>
     <div class="first_col">
@@ -171,26 +171,26 @@
     </div>
 }
 
-    <div class="second_col">
-        @*<div class="container">
-                <img id="blah" src="~/image/2.png" alt="your image" />
-                <div class="row">
-                    <input type='file' onchange="readFile(this);" />
-                </div>
-            </div>*@
-        <div class="form-group">
-            <div style="position:relative">
-                <label>Image</label>
-                <a class="btn" href="javascript:;">
-                    Выберите файл
-                    <input type="file" name="Photo" size="40" style="position:absolute;
+<div class="second_col">
+    @*<div class="container">
+            <img id="blah" src="~/image/2.png" alt="your image" />
+            <div class="row">
+                <input type='file' onchange="readFile(this);" />
+            </div>
+        </div>*@
+    <div class="form-group">
+        @*<div style="position:relative">
+            <label>Image</label>
+            <a class="btn" href="javascript:;">
+                Выберите файл
+                <input type="file" name="Photo" size="40" style="position:absolute;
                             z-index:2; top:0; left:0;filter:alpha(opacity=0); opacity:0;
                             background-color:transparent; color:transparent;"
-                           onchange='$("#upload-file-info").html($(this).val());' />
-                </a>
-                <span class="label label-info" id="upload-file-info"></span>
-            </div>
-            @if (Model.ArtWorks.PhotoArtId == null)
+                       onchange='$("#upload-file-info").html($(this).val());' />
+            </a>
+            <span class="label label-info" id="upload-file-info"></span>
+        </div>*@
+        @*@if (Model.ArtWorks.PhotoArtId == null)
             {
                 <div class="form-control-static">Нет фотографии</div>
             }
@@ -198,18 +198,16 @@
             {
                 <img class="img-thumbnail" width="175" height="175" hspace="30" vspace="10"
                      src="@Url.Action("Photo", "PhotoArt", new { Model.ArtWorks.PhotoArt.Photo})" align="left" />
-            }
-            <button name="action" value="editPhoto">Click Me</button>
+            }*@
 
 
-            @using (Html.BeginForm("EditArts", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
-                <input type="file" name="upload" /><br>
-                // Рабочая кнопка
-                <input type="submit" value="Загрузить" />
-            }
-        </div>
+
+        КАРТЫНКА!!! </ br>
+        <input type="file" name="upload" /><br>
+        
+        
     </div>
+</div>
 
 @*Скрипт для дропбара и загрузки фото*@
 <script>
@@ -249,4 +247,3 @@
     }
 
 </script>
-}
