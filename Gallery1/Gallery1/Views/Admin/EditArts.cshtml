@@ -12,8 +12,8 @@
     <div class="form-group col-lg-10">
         <div>
             @Html.HiddenFor(m => m.ArtWorks.Id)
-            <label>Название арта:</label>
             <div class="form-group">
+                <label>Название арта:</label>
                 @Html.TextBoxFor(model => model.ArtWorks.WorkName, new { @class = "form-control" })
             </div>
             <div class="form-group">
@@ -37,7 +37,6 @@
                 @Html.TextBoxFor(model => model.ArtWorks.Price, new { @class = "form-control" })
             </div>
             <input type="submit" value="Отправить" class="btn btn-primary" />
-            
         </div>
     </div>
     <div class="first_col">
@@ -57,7 +56,10 @@
                             <div class="container">
                                 <div class="fluid-row">
                                     @Html.ActionLink("Создать новый тип  ", "CreateType")<img src="~/image/4.ico" /><br />
-                                    @Html.EditorFor(model => model.ArtWorks.TypeId)<br />
+                                    <label>Все возможные типы</label>
+                                    @Html.DropDownListFor(model => Model.TypeId, new SelectList(Model.TypesCollection, "Id", "TypeName"), new { @class = "form-control" })
+                                    <label>Введите id типа</label>
+                                    @Html.TextBoxFor(model => model.ArtWorks.TypeId, new { @class = "form-control" })
                                 </div>
                             </div>
                         </div>
@@ -74,8 +76,10 @@
                             <div class="container">
                                 <div class="fluid-row">
                                     @Html.ActionLink("Создать нового автора  ", "CreateAuthor")<img src="~/image/4.ico" /><br />
-                                    @Html.DropDownList("Author", new SelectList(Model.Authors.ToList()))<br />
-                                    @Html.EditorFor(model => model.ArtWorks.AuthorId)<br />
+                                    <label>Все возможные авторы</label>
+                                    @Html.DropDownListFor(model => Model.AuthorId, new SelectList(Model.AuthorsCollection, "Id", "NameAuthor"), new { @class = "form-control" })
+                                    <label>Введите id автора</label>
+                                    @Html.TextBoxFor(model => model.ArtWorks.AuthorId, new { @class = "form-control" })
                                 </div>
                             </div>
                         </div>
@@ -83,7 +87,7 @@
                     <li class="list-group-item">
                         <div class="row toggle" id="dropdown-detail-3" data-toggle="detail-3">
                             <div class="col-xs-5">
-                                Выберите тип
+                                Выберите жанр
                             </div>
                             <div><i class="fa fa-chevron-down pull-right"></i></div>
                         </div>
@@ -91,8 +95,11 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новый тип  ", "CreateType")<img src="~/image/4.ico" /><br />
-                                    @Html.EditorFor(model => model.ArtWorks.TypeId)<br />
+                                    @Html.ActionLink("Создать новый жанр  ", "CreateGenre")<img src="~/image/4.ico" /><br />
+                                    <label>Все возможные жанры</label>
+                                    @Html.DropDownListFor(model => Model.GenreId, new SelectList(Model.GenresCollection, "Id", "GenreName"), new { @class = "form-control" })
+                                    <label>Введите id жанра</label>
+                                    @Html.TextBoxFor(model => model.ArtWorks.GenreId, new { @class = "form-control" })
                                 </div>
                             </div>
                         </div>
@@ -100,7 +107,7 @@
                     <li class="list-group-item">
                         <div class="row toggle" id="dropdown-detail-4" data-toggle="detail-4">
                             <div class="col-xs-5">
-                                Выберите жанр
+                                Выберите технику
                             </div>
                             <div><i class="fa fa-chevron-down pull-right"></i></div>
                         </div>
@@ -108,8 +115,11 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новый жанр  ", "CreateGenre")<img src="~/image/4.ico" /><br />
-                                    @Html.EditorFor(model => model.ArtWorks.GenreId)
+                                    @Html.ActionLink("Создать новую технологию  ", "CreateTechnique")<img src="~/image/4.ico" /><br />
+                                    <label>Все возможные техники</label>
+                                    @Html.DropDownListFor(model => Model.TechniqueId, new SelectList(Model.TechniquesCollection, "Id", "TechniqueName"), new { @class = "form-control" })
+                                    <label>Введите id техники</label>
+                                    @Html.TextBoxFor(model => model.ArtWorks.TechniqueId, new { @class = "form-control" })
                                 </div>
                             </div>
                         </div>
@@ -117,7 +127,7 @@
                     <li class="list-group-item">
                         <div class="row toggle" id="dropdown-detail-5" data-toggle="detail-5">
                             <div class="col-xs-5">
-                                Выберите школу
+                                Выберите локацию
                             </div>
                             <div><i class="fa fa-chevron-down pull-right"></i></div>
                         </div>
@@ -125,42 +135,16 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новую школу  ", "CreateSchool")<img src="~/image/4.ico" /><br />
-                                    @Html.EditorFor(model => model.ArtWorks.SchoolId)
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row toggle" id="dropdown-detail-6" data-toggle="detail-6">
-                            <div class="col-xs-5">
-                                Выберите технику
-                            </div>
-                            <div><i class="fa fa-chevron-down pull-right"></i></div>
-                        </div>
-                        <div id="detail-6">
-                            <hr>
-                            <div class="container">
-                                <div class="fluid-row">
-                                    @Html.ActionLink("Создать новую технологию  ", "CreateTechnique")<img src="~/image/4.ico" /><br />
-                                    @Html.EditorFor(model => model.ArtWorks.TechniqueId)
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row toggle" id="dropdown-detail-7" data-toggle="detail-7">
-                            <div class="col-xs-5">
-                                Выберите локацию
-                            </div>
-                            <div><i class="fa fa-chevron-down pull-right"></i></div>
-                        </div>
-                        <div id="detail-7">
-                            <hr>
-                            <div class="container">
-                                <div class="fluid-row">
                                     @Html.ActionLink("Создать новую локацию  ", "CreateLocation")<img src="~/image/4.ico" /><br />
-                                    @Html.EditorFor(model => model.ArtWorks.LocationId)
+                                    <label>Все возможные локации</label>
+                                    @Html.DropDownListFor(model => Model.LocationId, new SelectList(Model.LocationsCollection, "Id", "LocationName"), new { @class = "form-control" })
+                                    <label>Введите id локации</label>
+
+                                    @Html.TextBoxFor(model => model.ArtWorks.LocationId, new { @class = "form-control" })
+
+                                    @Html.LabelFor(m => m.PhotoArtId, "фоточка")
+                                    <br />
+                                    @Html.EditorFor(m => m.PhotoArtId)
                                 </div>
                             </div>
                         </div>
@@ -169,81 +153,55 @@
             </div>
         </div>
     </div>
-}
 
-<div class="second_col">
-    @*<div class="container">
-            <img id="blah" src="~/image/2.png" alt="your image" />
-            <div class="row">
-                <input type='file' onchange="readFile(this);" />
+    <div class="second_col">
+        <div class="form-group">
+            <div style="position:relative;">
+                <label>Картинка</label>
+                <a class='btn' href='javascript:;'>
+                    Выберите файл...
+                    <input type="file" size="40"
+                           style="position:absolute;z-index:2;top:0;
+                                left:0;filter: alpha(opacity=0); opacity:0;
+                                background-color:transparent;color:transparent;"
+                           onchange='$("#upload-file-info").html($(this).val());'>
+                </a>
+                <span class='label label-info' id="upload-file-info"></span>
             </div>
-        </div>*@
-    <div class="form-group">
-        @*<div style="position:relative">
-            <label>Image</label>
-            <a class="btn" href="javascript:;">
-                Выберите файл
-                <input type="file" name="Photo" size="40" style="position:absolute;
-                            z-index:2; top:0; left:0;filter:alpha(opacity=0); opacity:0;
-                            background-color:transparent; color:transparent;"
-                       onchange='$("#upload-file-info").html($(this).val());' />
-            </a>
-            <span class="label label-info" id="upload-file-info"></span>
-        </div>*@
-        @*@if (Model.ArtWorks.PhotoArtId == null)
+            @*@if (Model.ArtWorks.PhotoArtId == null)
             {
-                <div class="form-control-static">Нет фотографии</div>
+                <div class="form-control-static">Нет картинки</div>
             }
             else
             {
-                <img class="img-thumbnail" width="175" height="175" hspace="30" vspace="10"
-                     src="@Url.Action("Photo", "PhotoArt", new { Model.ArtWorks.PhotoArt.Photo})" align="left" />
+                <img class="img-thumbnail" src="~/files/@Model.ArtWorks.PhotoArt.PhotoName" />
             }*@
+        </div>
+        </div>
+}
 
+        @*Скрипт для дропбара и загрузки фото*@
+        <script>
+            $(document).ready(function () {
+                $('[id^=detail-]').hide();
+                $('.toggle').click(function () {
+                    $input = $(this);
+                    $target = $('#' + $input.attr('data-toggle'));
+                    $target.slideToggle();
+                    if ($input.find('.col-xs-2 i').attr('class') == "fa fa-chevron-down pull-right") {
+                        $input.find('.col-xs-2 i').removeClass('fa-chevron-down');
+                        $input.find('.col-xs-2 i').addClass('fa-chevron-up');
+                    }
+                    else if ($input.find('.col-xs-2 i').attr('class') == "fa pull-right fa-chevron-up") {
+                        $input.find('.col-xs-2 i').removeClass('fa-chevron-up');
+                        $input.find('.col-xs-2 i').addClass('fa-chevron-down');
+                    }
+                    else if ($input.find('.col-xs-2 i').attr('class') == "fa pull-right fa-chevron-down") {
+                        $input.find('.col-xs-2 i').removeClass('fa-chevron-down');
+                        $input.find('.col-xs-2 i').addClass('fa-chevron-up');
+                    }
 
+                });
+            });
 
-        КАРТЫНКА!!! </ br>
-        <input type="file" name="upload" /><br>
-        
-        
-    </div>
-</div>
-
-@*Скрипт для дропбара и загрузки фото*@
-<script>
-    $(document).ready(function () {
-        $('[id^=detail-]').hide();
-        $('.toggle').click(function () {
-            $input = $(this);
-            $target = $('#' + $input.attr('data-toggle'));
-            $target.slideToggle();
-            if ($input.find('.col-xs-2 i').attr('class') == "fa fa-chevron-down pull-right") {
-                $input.find('.col-xs-2 i').removeClass('fa-chevron-down');
-                $input.find('.col-xs-2 i').addClass('fa-chevron-up');
-            }
-            else if ($input.find('.col-xs-2 i').attr('class') == "fa pull-right fa-chevron-up") {
-                $input.find('.col-xs-2 i').removeClass('fa-chevron-up');
-                $input.find('.col-xs-2 i').addClass('fa-chevron-down');
-            }
-            else if ($input.find('.col-xs-2 i').attr('class') == "fa pull-right fa-chevron-down") {
-                $input.find('.col-xs-2 i').removeClass('fa-chevron-down');
-                $input.find('.col-xs-2 i').addClass('fa-chevron-up');
-            }
-
-        });
-    });
-
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-</script>
+        </script>

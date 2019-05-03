@@ -27,10 +27,6 @@ namespace Gallery1.Models
         public int? GenreId { get; set; }
         public Genre Genre { get; set; }
 
-        //внешний ключ для школы работы
-        public int? SchoolId { get; set; }
-        public School School { get; set; }
-
         //внешний ключ для технологии работы
         public int? TechniqueId { get; set; }
         public Technique Technique { get; set; }

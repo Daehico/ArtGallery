@@ -42,9 +42,6 @@
             @Html.DisplayNameFor(model => model.GenreId)
         </th>
         <th class="text-center">
-            @Html.DisplayNameFor(model => model.SchoolId)
-        </th>
-        <th class="text-center">
             @Html.DisplayNameFor(model => model.TechniqueId)
         </th>
         <th class="text-center">
@@ -89,10 +86,6 @@
         <td class="text-center">
             <b style="color:brown">@Html.DisplayFor(modelItem => item.GenreId)</b><br />
             @Html.DisplayFor(modelItem => item.Genre.GenreName)
-        </td>
-        <td class="text-center">
-            <b style="color:brown">@Html.DisplayFor(modelItem => item.SchoolId)</b><br />
-            @Html.DisplayFor(modelItem => item.School.SchoolName)
         </td>
         <td class="text-center">
             <b style="color:brown">@Html.DisplayFor(modelItem => item.TechniqueId)</b><br />

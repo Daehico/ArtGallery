@@ -12,7 +12,6 @@ namespace Gallery1.Models
         public DbSet<ArtWork> ArtWorks { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Genre> Genres { get; set; }
-        public DbSet<School> Schools { get; set; }
         public DbSet<Technique> Techniques { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<TypeLocation> TypeLocations { get; set; }

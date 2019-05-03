@@ -20,7 +20,7 @@ namespace Gallery1.Controllers
             var arts = db.ArtWorks
                 .Include(a => a.Author)
                 .Include(a => a.Type)
-                .Include(a => a.School)
+                .Include(a => a.Location.TypeLocation)
                 .Include(a => a.Location.City.Country)
                 .Include(a=> a.PhotoArt)
                 .Include(a => a.Genre);
@@ -50,6 +50,10 @@ namespace Gallery1.Controllers
             ArtWork artWork = db.ArtWorks
                 .Include(a => a.Author)
                 .Include(a => a.Type)
+                .Include(a => a.Location.TypeLocation)
+                .Include(a => a.Location.City.Country)
+                .Include(a => a.PhotoArt)
+                .Include(a => a.Genre)
                 .FirstOrDefault(a => a.Id == Id);
             //ArtWork artWork = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
             return View(artWork);

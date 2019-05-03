@@ -28,7 +28,7 @@ namespace Gallery1.Controllers
                 }
                 if (user != null)
                 {
-                    FormsAuthentication.SetAuthCookie(model.Login, true);
+                    FormsAuthentication.SetAuthCookie(model.Login, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -72,7 +72,7 @@ namespace Gallery1.Controllers
                     }
                     if (user != null)
                     {
-                        FormsAuthentication.SetAuthCookie(model.Login, true);
+                        FormsAuthentication.SetAuthCookie(model.Login, false);
                         return RedirectToAction("Login", "User");
                     }
                 }

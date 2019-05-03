@@ -3,6 +3,7 @@ using Gallery1.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,7 +14,6 @@ namespace Gallery1.Controllers
     public class AdminController : Controller
     {
         ArtContext db = new ArtContext();
-        PhotoArt dbtest = new PhotoArt();
         public ActionResult ListArts()
         {
             return View(db.ArtWorks
@@ -21,53 +21,77 @@ namespace Gallery1.Controllers
                 .Include(a => a.Author)
                 .Include(a => a.Genre)
                 .Include(a => a.Location)
-                .Include(a => a.Technique)
-                .Include(a => a.School));
+                .Include(a => a.Technique));
         }
-
-      
 
         public ViewResult EditArts(int Id)
         {
+            EditModel model = new EditModel();
             using (ArtContext db = new ArtContext())
             {
-                var model = new EditModel
-                {
-                    ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id),
-                    Authors = db.Authors.ToList(),
-                    PhotoArt = db.PhotoArts.FirstOrDefault(a => a.Id == Id)
-                };
-                return View(model);
+                model.ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
+                model.Authors = db.Authors.ToList();
+                model.PhotoArt = db.PhotoArts.FirstOrDefault(a => a.Id == Id);
+                model.AuthorsCollection = db.Authors.ToList();
+                model.TypesCollection = db.Types.ToList();
+                model.GenresCollection = db.Genres.ToList();
+                model.TechniquesCollection = db.Techniques.ToList();
+                model.LocationsCollection = db.Locations.ToList();
+               
             }
-            //ArtWork artWork = db.ArtWorks.Include(a => a.Author)
-            //    .FirstOrDefault(a => a.Id == Id);
-            //return View(artWork);
+            ArtWork artWork = db.ArtWorks.Include(a => a.Author)
+               .FirstOrDefault(a => a.Id == Id);
+           
+
+            return View(model);
+            //using (ArtContext db = new ArtContext())
+            //{
+            //    var model = new EditModel
+            //    {
+            //        ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id),
+            //        Authors = db.Authors.ToList(),
+            //        PhotoArt = db.PhotoArts.FirstOrDefault(a => a.Id == Id),
+            //        AuthorsCollection = db.Authors.ToList<Author>();
+            //    };
+            //    return View(model);
+            //}
+           
         }
 
         [HttpPost]
-        public ActionResult EditArts(ArtWork editModel, HttpPostedFileBase upload, int Id)
+        public ActionResult EditArts(EditModel editModel, HttpPostedFileBase upload, int Id)
         {
-            if (upload != null)
-            {
-                string fileName = System.IO.Path.GetFileName(upload.FileName);
-                upload.SaveAs(Server.MapPath("~/Files/" + fileName));
-                int photoId;
+            
+                
                 using (ArtContext db1 = new ArtContext())
                 {
-                    PhotoArt p1 = new PhotoArt { PhotoName = fileName , Photo = Server.MapPath("~/ Files / " + fileName) };
-                    db1.PhotoArts.Add(p1);
-                    db1.SaveChanges();  
-                    photoId = p1.Id;
+                if (upload != null)
+                {
+                    string fileName = System.IO.Path.GetFileName(upload.FileName);
+                    upload.SaveAs(Server.MapPath("~/Files/" + fileName));
+                    int photoId;
+                    PhotoArt photo = new PhotoArt { PhotoName = fileName, Photo = Server.MapPath("~/ Files / " + fileName) };
+                    db1.PhotoArts.Add(photo);
+                    db1.SaveChanges();
+                    //db1.PhotoArtCollection.Add(p1);
+                    //db1.PhotoArts.Add(p1);
+
+                    photoId = photo.Id;
                     ArtWork artWork = db1.ArtWorks.Where(p => p.Id == Id).FirstOrDefault();
                     artWork.PhotoArtId = photoId;
                     db1.SaveChanges();
                 }
+                else
+                {
+
+                    ArtWork artWork = db1.ArtWorks.FirstOrDefault(a => a.Id == Id);
+                    db1.ArtWorks.AddOrUpdate(artWork);
+
+                    db1.Entry(artWork).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
-            else
-            {
-                db.Entry(editModel).State = EntityState.Modified;
-                db.SaveChanges();
-            }
+           
             return RedirectToAction("ListArts");
         }
 
@@ -148,18 +172,6 @@ namespace Gallery1.Controllers
             return RedirectToAction("ListArts");
         }
 
-        [HttpGet]
-        public ActionResult CreateSchool()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult CreateSchool(School school)
-        {
-            db.Schools.Add(school);
-            db.SaveChanges();
-            return RedirectToAction("ListArts");
-        }
 
         [HttpGet]
         public ActionResult CreateTechnique()

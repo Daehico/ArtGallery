@@ -2,7 +2,7 @@
 @model PagedList.IPagedList<Gallery1.Models.ArtWork>
 <link href="~/Content/StyleGallery.css" rel="stylesheet" />
 <link href="~/Content/StyleSlyder.css" rel="stylesheet" />
-
+<link href="~/Content/StyleSearch.css" rel="stylesheet" />
 <div class="slider">
     <div class="slider-wrap">
         <div class="container">
@@ -127,7 +127,12 @@
     {
         <b>Search By:</b> @Html.RadioButton("SearchBy", "Name") <text>Name</text>
         @Html.RadioButton("SearchBy", "Type") <text>Type</text> <br />
-        @Html.TextBox("search") <input type="submit" value="Search" />
+        <div>
+            @Html.TextBox("search")
+            <button type="submit">
+                Search <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
     }
 
 </p>
