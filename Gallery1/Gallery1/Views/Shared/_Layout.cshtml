@@ -17,8 +17,9 @@
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
                     <li>@Html.ActionLink("О программе", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Админ.панель", "ListArts", "Admin")</li>
-                    </ul>
+                    <li>@Html.ActionLink("Админ.панель(арты)", "ListArts", "Admin")</li>
+                    <li>@Html.ActionLink("Админ.панель(пользователи)", "ListUser", "UserControl")</li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right" style="margin-right:15px">
                     @if (this.User.Identity.IsAuthenticated)
                     {

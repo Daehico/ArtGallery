@@ -142,6 +142,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\PhotoArtController.cs" />
+    <Compile Include="Controllers\UserControlController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -233,6 +235,9 @@
     <Content Include="Views\Admin\CreateCity.cshtml" />
     <Content Include="Views\Admin\CreateCountry.cshtml" />
     <Content Include="Views\User\LogOff.cshtml" />
+    <Content Include="Views\UserControl\ListUser.cshtml" />
+    <Content Include="Views\UserControl\EditUser.cshtml" />
+    <Content Include="Views\PhotoArt\UploadPhoto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

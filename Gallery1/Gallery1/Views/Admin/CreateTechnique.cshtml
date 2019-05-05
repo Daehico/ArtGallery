@@ -5,13 +5,15 @@
 <h2>Новый автор</h2>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.TechniqueName)
-    <br />
-    @Html.EditorFor(model => model.TechniqueName)
-    <br /><br />
-    @Html.LabelFor(model => model.TechniqueDescription)
-    <br />
-    @Html.EditorFor(model => model.TechniqueDescription)
-    <br /><br />
-    <input type="submit" value="Добавить" />
+    <div class="form-group">
+        <label>Название техники:</label>
+        @Html.TextBoxFor(model => model.TechniqueName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Описание:</label>
+        @Html.TextAreaFor(model => model.TechniqueDescription, new { @class = "form-control" })
+    </div><br />
+
+    <input type="submit" value="Отправить" class="btn btn-primary" />
 }

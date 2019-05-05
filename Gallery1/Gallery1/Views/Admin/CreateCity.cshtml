@@ -5,19 +5,21 @@
 <h2>Новый автор</h2>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.CityName)
-    <br />
-    @Html.EditorFor(model => model.CityName)
-    <br /><br />
-    @Html.LabelFor(model => model.Region)
-    <br />
-    @Html.EditorFor(model => model.Region)
-    <br /><br />
-    @Html.ActionLink("Create country", "CreateCountry")
-    @Html.LabelFor(model => model.CountryId)
-    <br />
-    @Html.EditorFor(model => model.CountryId)
-    <br /><br />
+    <div class="form-group">
+        <label>Название города:</label>
+        @Html.TextBoxFor(model => model.CityName, new { @class = "form-control" })
+    </div>
 
-    <input type="submit" value="Добавить" />
+    <div class="form-group">
+        <label>Регион:</label>
+        @Html.TextBoxFor(model => model.Region, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.ActionLink("Создать страну", "CreateCountry")<br />
+        <label>Введите id страны</label>
+        @Html.TextBoxFor(model => model.CountryId, new { @class = "form-control" })
+    </div><br />
+
+    <input type="submit" value="Добавить" class="btn btn-primary" />
 }

@@ -5,22 +5,25 @@
 <h2>Новый автор</h2>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.CountryName)
-    <br />
-    @Html.EditorFor(model => model.CountryName)
-    <br /><br />
-    @Html.LabelFor(model => model.DescriptionCountry)
-    <br />
-    @Html.EditorFor(model => model.DescriptionCountry)
-    <br /><br />
-    @Html.LabelFor(model => model.Capital)
-    <br />
-    @Html.EditorFor(model => model.Capital)
-    <br /><br />
-    @Html.LabelFor(model => model.Language)
-    <br />
-    @Html.EditorFor(model => model.Language)
-    <br /><br />
+    <div class="form-group">
+        <label>Название страны:</label>
+        @Html.TextBoxFor(model => model.CountryName, new { @class = "form-control" })
+    </div>
 
-    <input type="submit" value="Добавить" />
+    <div class="form-group">
+        <label>Описание:</label>
+        @Html.TextAreaFor(model => model.DescriptionCountry, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Столица:</label>
+        @Html.TextBoxFor(model => model.Capital, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Язык:</label>
+        @Html.TextBoxFor(model => model.Language, new { @class = "form-control" })
+    </div><br />
+
+    <input type="submit" value="Отправить" class="btn btn-primary" />
 }

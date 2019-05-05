@@ -16,7 +16,7 @@
 
         @foreach (var link in Model)
         {
-            @*<li>
+            <li>
                 @Html.RouteLink(link, new
                 {
                     controller = "Home",
@@ -27,7 +27,7 @@
                     @class =""
                     +(link == ViewBag.SelectedTypes)
                 })
-            </li>*@
+            </li>
         }
     </ul>
 </nav>

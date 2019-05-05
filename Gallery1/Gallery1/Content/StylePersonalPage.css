@@ -1,16 +1,12 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700');
-@import url('https://fonts.googleapis.com/css?family=Playball'); 
+@import url('https://fonts.googleapis.com/css?family=Playball');
 
-.image {
-    text-align: right;
-    top: 130px;
-    left: 25%;
+.img-thumbnail {
+    top: 170px;
+    left: 50%;
+    width: 25%;
+    height: 50%;
     position: absolute;
-}
-
-.image img{
-    width: 30%;
-    height: 30%;
 }
 
 h2{

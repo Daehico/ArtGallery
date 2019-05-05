@@ -93,105 +93,6 @@ C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.dll
 C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.Mvc.dll
 C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.xml
 C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.Mvc.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Gallery1.dll.config
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Gallery1.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Gallery1.pdb
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\csc.exe
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\csc.exe.config
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\csc.rsp
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\csi.exe
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\csi.exe.config
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\csi.rsp
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.CodeAnalysis.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.CSharp.Core.targets
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.Managed.Core.targets
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\Microsoft.VisualBasic.Core.targets
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.AppContext.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Collections.Immutable.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Console.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Diagnostics.StackTrace.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.IO.Compression.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.IO.FileSystem.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.IO.FileSystem.Primitives.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.IO.Pipes.AccessControl.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.IO.Pipes.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Reflection.Metadata.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.AccessControl.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.Claims.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.Cryptography.Encoding.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.Cryptography.Primitives.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Security.Principal.Windows.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Text.Encoding.CodePages.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.ValueTuple.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Xml.ReaderWriter.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Xml.XmlDocument.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Xml.XPath.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\System.Xml.XPath.XDocument.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\vbc.exe
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\vbc.exe.config
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\vbc.rsp
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\VBCSCompiler.exe
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\roslyn\VBCSCompiler.exe.config
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Antlr3.Runtime.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\EntityFramework.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\EntityFramework.SqlServer.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Microsoft.AspNet.TelemetryCorrelation.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Microsoft.Web.Infrastructure.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Newtonsoft.Json.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\PagedList.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\PagedList.Mvc.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Diagnostics.DiagnosticSource.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Helpers.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Mvc.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Optimization.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Razor.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.WebPages.Deployment.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.WebPages.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.WebPages.Razor.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\WebGrease.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\EntityFramework.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\EntityFramework.SqlServer.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\PagedList.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\PagedList.Mvc.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Helpers.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Mvc.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Optimization.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.Razor.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.WebPages.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.WebPages.Deployment.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Web.WebPages.Razor.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Newtonsoft.Json.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Antlr3.Runtime.pdb
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\System.Diagnostics.DiagnosticSource.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Microsoft.AspNet.TelemetryCorrelation.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.Helpers.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.Mvc.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.Optimization.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.Razor.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.WebPages.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.WebPages.Deployment.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\bin\ru\System.Web.WebPages.Razor.resources.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\obj\Debug\Gallery1.csprojAssemblyReference.cache
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CoreCompileInputs.cache
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CopyComplete
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\obj\Debug\Gallery1.dll
-H:\Downloads\ArtGallery-master (8)\ArtGallery-master\Gallery1\Gallery1\obj\Debug\Gallery1.pdb
-H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csprojAssemblyReference.cache
-H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CoreCompileInputs.cache
-H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.dll
-H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.pdb
 H:\ArtGallery\Gallery1\Gallery1\bin\Gallery1.dll.config
 H:\ArtGallery\Gallery1\Gallery1\bin\Gallery1.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\Gallery1.pdb
@@ -282,4 +183,8 @@ H:\ArtGallery\Gallery1\Gallery1\bin\ru\System.Web.Razor.resources.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\ru\System.Web.WebPages.resources.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\ru\System.Web.WebPages.Deployment.resources.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\ru\System.Web.WebPages.Razor.resources.dll
+H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csprojAssemblyReference.cache
+H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CoreCompileInputs.cache
 H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CopyComplete
+H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.dll
+H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.pdb
