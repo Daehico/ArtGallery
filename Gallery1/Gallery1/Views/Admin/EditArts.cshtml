@@ -60,7 +60,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новый тип  ", "CreateType")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать новый тип  ", "CreateType", new { Model.User.RoleId })<img src="~/image/4.ico" /><br />
                                     <label>Все возможные типы</label>
                                     @Html.DropDownListFor(model => Model.TypeId, new SelectList(Model.TypesCollection, "Id", "TypeName"), new { @class = "form-control" })
                                     <label>Введите id типа</label>
@@ -83,7 +83,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать нового автора  ", "CreateAuthor")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать нового автора  ", "CreateAuthor", new { Model.User.RoleId })<img src="~/image/4.ico" /><br />
                                     <label>Все возможные авторы</label>
                                     @Html.DropDownListFor(model => Model.AuthorId, new SelectList(Model.AuthorsCollection, "Id", "NameAuthor"), new { @class = "form-control" })
                                     <label>Введите id автора</label>
@@ -103,7 +103,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новый жанр  ", "CreateGenre")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать новый жанр  ", "CreateGenre", new { Model.User.RoleId })<img src="~/image/4.ico" /><br />
                                     <label>Все возможные жанры</label>
                                     @Html.DropDownListFor(model => Model.GenreId, new SelectList(Model.GenresCollection, "Id", "GenreName"), new { @class = "form-control" })
                                     <label>Введите id жанра</label>
@@ -123,7 +123,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новую технологию  ", "CreateTechnique")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать новую технологию  ", "CreateTechnique", new { Model.User.RoleId })<img src="~/image/4.ico" /><br />
                                     <label>Все возможные техники</label>
                                     @Html.DropDownListFor(model => Model.TechniqueId, new SelectList(Model.TechniquesCollection, "Id", "TechniqueName"), new { @class = "form-control" })
                                     <label>Введите id техники</label>
@@ -143,7 +143,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новую локацию  ", "CreateLocation")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать новую локацию  ", "CreateLocation", new { Model.User.RoleId })<img src="~/image/4.ico" /><br />
                                     <label>Все возможные локации</label>
                                     @Html.DropDownListFor(model => Model.LocationId, new SelectList(Model.LocationsCollection, "Id", "LocationName"), new { @class = "form-control" })
                                     <label>Введите id локации</label>
@@ -163,7 +163,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новое фото  ", "UploadPhoto")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать новое фото  ", "UploadPhoto", new { Model.User.RoleId })<img src="~/image/4.ico" /><br />
                                     <label>Все возможные фото</label>
                                     @Html.DropDownListFor(model => Model.PhotoArtId, new SelectList(Model.PhotoArtCollection, "Id", "PhotoName"), new { @class = "form-control" })
                                     <label>Введите id локации</label>

@@ -14,14 +14,24 @@ namespace Gallery1.Controllers
         //{
         //    return View();
         //}
-        [HttpGet]
-        public ActionResult UploadPhoto()
+        private void CheckUserRights(int id)
         {
+            if (id == 0)
+            {
+                throw new HttpException(404, "облом");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult UploadPhoto(int userid)
+        {
+            CheckUserRights(userid);
             return View();
         }
 
-        public ActionResult UploadPhoto(EditModel model, HttpPostedFileBase upload)
+        public ActionResult UploadPhoto(int userid, HttpPostedFileBase upload)
         {
+            CheckUserRights(userid);
             if (upload != null)
             {
                 string fileName = System.IO.Path.GetFileName(upload.FileName);
