@@ -23,6 +23,7 @@ namespace Gallery1.Controllers
             }
         }
 
+        [Authorize(Roles = "Администратор")]
         public ActionResult ListArts(int id)
         {
                 CheckUserRights(id);

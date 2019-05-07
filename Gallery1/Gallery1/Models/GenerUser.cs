@@ -15,6 +15,6 @@ namespace Gallery1.Models
         public string Address { get; set; }
 
         public int? UserId { get; set; }
-        public User User { get; set; }
+        public UserContext User { get; set; }
     }
 }
