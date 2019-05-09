@@ -188,5 +188,3 @@ H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CoreCompileInputs.cach
 H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.csproj.CopyComplete
 H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.dll
 H:\ArtGallery\Gallery1\Gallery1\obj\Debug\Gallery1.pdb
-H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Providers.dll
-H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Providers.xml

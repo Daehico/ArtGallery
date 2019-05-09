@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -19,7 +18,6 @@ namespace Gallery1.Models
         }
 
         //внешний ключ для роли пользователя
-        [Key]
         public int? RoleId { get; set; }
         public Role Role { get; set; }
     }

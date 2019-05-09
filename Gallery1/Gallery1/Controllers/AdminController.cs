@@ -10,59 +10,41 @@ using Type = Gallery1.Models.Type;
 
 namespace Gallery1.Controllers
 {
-    
     public class AdminController : Controller
     {
         ArtContext db = new ArtContext();
-
-        private void CheckUserRights(int id)
+        public ActionResult ListArts()
         {
-            if(id == 0)
-            {
-                throw new HttpException(404, "облом");
-            }
-        }
-
-        [Authorize(Roles = "Администратор")]
-        public ActionResult ListArts(int id)
-        {
-                CheckUserRights(id);
-                return View(db.ArtWorks
+            return View(db.ArtWorks
                 .Include(a => a.Type)
                 .Include(a => a.Author)
                 .Include(a => a.Genre)
                 .Include(a => a.Location)
                 .Include(a => a.Technique));
-            }
-            
-        
+        }
 
-        public ActionResult EditArts(int Id,int userid)
+        public ActionResult EditArts(int Id)
         {
-        CheckUserRights(userid);
-        EditModel model = new EditModel();
-                using (ArtContext db = new ArtContext())
-                {
-                    model.ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
-                    model.Authors = db.Authors.ToList();
-                    model.PhotoArt = db.PhotoArts.FirstOrDefault(a => a.Id == Id);
-                    model.AuthorsCollection = db.Authors.ToList();
-                    model.TypesCollection = db.Types.ToList();
-                    model.GenresCollection = db.Genres.ToList();
-                    model.TechniquesCollection = db.Techniques.ToList();
-                    model.LocationsCollection = db.Locations.ToList();
-                    model.PhotoArtCollection = db.PhotoArts.ToList();
-                }
-                return View(model);
+            EditModel model = new EditModel();
+            using (ArtContext db = new ArtContext())
+            {
+                model.ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
+                model.Authors = db.Authors.ToList();
+                model.PhotoArt = db.PhotoArts.FirstOrDefault(a => a.Id == Id);
+                model.AuthorsCollection = db.Authors.ToList();
+                model.TypesCollection = db.Types.ToList();
+                model.GenresCollection = db.Genres.ToList();
+                model.TechniquesCollection = db.Techniques.ToList();
+                model.LocationsCollection = db.Locations.ToList();
+                model.PhotoArtCollection = db.PhotoArts.ToList();
             }
-           
-        
+            return View(model);
+        }
 
         [HttpPost]
-        public ActionResult EditArts(EditModel model, HttpPostedFileBase upload, int Id, int userid)
+        public ActionResult EditArts(EditModel model, HttpPostedFileBase upload, int Id)
         {
-            CheckUserRights(userid);
-            if (upload != null)
+                if (upload != null)
                 {
                     string fileName = System.IO.Path.GetFileName(upload.FileName);
                     upload.SaveAs(Server.MapPath("~/Files/" + fileName));
@@ -88,17 +70,15 @@ namespace Gallery1.Controllers
         }
 
         [HttpGet]
-        public ActionResult UploadPhoto(int userid)
+        public ActionResult UploadPhoto()
         {
-            CheckUserRights(userid);
             return View();
         }
 
         [HttpPost]
-        public ActionResult UploadPhoto(PhotoArt photo, HttpPostedFileBase upload, int userid)
+        public ActionResult UploadPhoto(PhotoArt photo, HttpPostedFileBase upload)
         {
-            CheckUserRights(userid);
-            if (upload != null)
+            if(upload != null)
             {
                 string fileName = System.IO.Path.GetFileName(upload.FileName);
                 upload.SaveAs(Server.MapPath("~/Files/" + fileName));
@@ -113,25 +93,22 @@ namespace Gallery1.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create(int userid)
+        public ActionResult Create()
         {
-            CheckUserRights(userid);
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(ArtWork artWork,int userid)
+        public ActionResult Create(ArtWork artWork)
         {
-            CheckUserRights(userid);
             db.ArtWorks.Add(artWork);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
 
         [HttpGet]
-        public ActionResult DeleteArt(int id, int userid)
+        public ActionResult DeleteArt(int id)
         {
-            CheckUserRights(userid);
             ArtWork b = db.ArtWorks.Find(id);
             if (b == null)
             {
@@ -141,9 +118,8 @@ namespace Gallery1.Controllers
         }
 
         [HttpPost, ActionName("DeleteArt")]
-        public ActionResult DeleteConfirmed(int id,int userid)
+        public ActionResult DeleteConfirmed(int id)
         {
-            CheckUserRights(userid);
             ArtWork b = db.ArtWorks.Find(id);
             if (b == null)
             {
@@ -155,45 +131,39 @@ namespace Gallery1.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateType(int userid)
+        public ActionResult CreateType()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateType(Type type,int userid)
+        public ActionResult CreateType(Type type)
         {
-            CheckUserRights(userid);
             db.Types.Add(type);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
 
         [HttpGet]
-        public ActionResult CreateAuthor(int userid)
+        public ActionResult CreateAuthor()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateAuthor(Author author,int userid)
+        public ActionResult CreateAuthor(Author author)
         {
-            CheckUserRights(userid);
             db.Authors.Add(author);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
 
         [HttpGet]
-        public ActionResult CreateGenre(int userid)
+        public ActionResult CreateGenre()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateGenre(Genre genre,int userid)
+        public ActionResult CreateGenre(Genre genre)
         {
-            CheckUserRights(userid);
             db.Genres.Add(genre);
             db.SaveChanges();
             return RedirectToAction("ListArts");
@@ -201,60 +171,52 @@ namespace Gallery1.Controllers
 
 
         [HttpGet]
-        public ActionResult CreateTechnique(int userid)
+        public ActionResult CreateTechnique()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateTechnique(Technique technique,int userid)
+        public ActionResult CreateTechnique(Technique technique)
         {
-            CheckUserRights(userid);
             db.Techniques.Add(technique);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
 
         [HttpGet]
-        public ActionResult CreateLocation(int userid)
+        public ActionResult CreateLocation()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateLocation(Location location,int userid)
+        public ActionResult CreateLocation(Location location)
         {
-            CheckUserRights(userid);
             db.Locations.Add(location);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
 
         [HttpGet]
-        public ActionResult CreateCity(int userid)
+        public ActionResult CreateCity()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateCity(City city,int userid)
+        public ActionResult CreateCity(City city)
         {
-            CheckUserRights(userid);
             db.Cities.Add(city);
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
 
         [HttpGet]
-        public ActionResult CreateCountry(int userid)
+        public ActionResult CreateCountry()
         {
-            CheckUserRights(userid);
             return View();
         }
         [HttpPost]
-        public ActionResult CreateCountry(Country country, int userid)
+        public ActionResult CreateCountry(Country country)
         {
-            CheckUserRights(userid);
             db.Countries.Add(country);
             db.SaveChanges();
             return RedirectToAction("ListArts");

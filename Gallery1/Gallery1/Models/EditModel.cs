@@ -10,12 +10,10 @@ namespace Gallery1.Models
     {
         public ArtWork ArtWorks { get; set; }
         public PhotoArt PhotoArt { get; set; }
-        public UserContext User { get; set; }
         public IEnumerable<PhotoArt> PhotoArts { get; set; }
         public IEnumerable<ArtWork> ArtWork { get; set; }
         public IEnumerable<Author> Authors { get; set; }
-        public IEnumerable<UserContext> Users { get; set; }
-       
+
         //дроп автор
         public Nullable<int> AuthorId { get; set; }
         public List<Author> AuthorsCollection { get; set; }
