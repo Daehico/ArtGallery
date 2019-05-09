@@ -1,85 +1,204 @@
 ﻿@using PagedList.Mvc;
 @model PagedList.IPagedList<Gallery1.Models.ArtWork>
 <link href="~/Content/StyleGallery.css" rel="stylesheet" />
+<link href="~/Content/StyleSlyder.css" rel="stylesheet" />
+<link href="~/Content/StyleSearch.css" rel="stylesheet" />
+<div class="slider">
+    <div class="slider-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="mogo-slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner text-center" role="listbox">
+                            <div class="item active">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Gallery
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to Art Gallery
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    @if (this.User.Identity.IsAuthenticated)
+                                    {
+                                        <div class="btn-action">
+                                            <a href="~/User/LogOff" class="btn btn-primary">LogOff</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="btn-action">
+                                            <a href="~/User/Login" class="btn btn-primary">Logout</a>
+                                            <a href="~/User/Register" class="btn btn-primary">Register</a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Gallery
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to Art Gallery
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Gallery
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to Art Gallery
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="slider-content">
+                                    <p class="slider-caption">
+                                        Creative Gallery
+                                    </p>
+                                    <h3 class="slider-titile text-uppercase">
+                                        Welcome <br> to Art Gallery
+                                    </h3>
+                                    <span class="verticle-bar"></span>
+                                    <div class="btn-action">
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#mogo-slider" data-slide-to="0" class="active">
+                                <div class="indicator-inner">
+                                    <span class="number">01</span>
+                                    <span class="text text-uppercase">Intro</span>
+                                </div>
+                            </li>
+                            <li data-target="#mogo-slider" data-slide-to="1">
+                                <div class="indicator-inner">
+                                    <span class="number">02</span>
+                                    <span class="text text-uppercase">Work</span>
+                                </div>
+                            </li>
+                            <li data-target="#mogo-slider" data-slide-to="2">
+                                <div class="indicator-inner">
+                                    <span class="number">03</span>
+                                    <span class="text text-uppercase">About</span>
+                                </div>
+                            </li>
+                            <li data-target="#mogo-slider" data-slide-to="3">
+                                <div class="indicator-inner">
+                                    <span class="number">04</span>
+                                    <span class="text text-uppercase">Contracts</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-@{
-    ViewBag.Title = "Представленные работы";
-}
+@*Таймер перелистывания слайдера*@
+<script>
+    jQuery('#mogo-slider').carousel({
+        interval: 2
+    })
+</script>
+
+
+
 
 <h2>Представленные работы</h2>
-    <p>
-        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-        {
-            <b>Search By:</b> @Html.RadioButton("SearchBy", "Name") <text>Name</text>
-            @Html.RadioButton("SearchBy", "Type") <text>Type</text> <br />
-            @Html.TextBox("search") <input type="submit" value="Search" />
-        }
+<p class="search">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <b>Search By:</b> @Html.RadioButton("SearchBy", "Name") <text>Name</text>
+        @Html.RadioButton("SearchBy", "Type") <text>Type</text> <br />
+        <div>
+            @Html.TextBox("search")
+            <button type="submit">
+                Search <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+    }
 
-    </p>
-    <div class="container">
-        @foreach (var item in Model)
-        {
-            <div class="column">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="our-team-main">
-                            <div class="team-front">
-                                <img src="http://placehold.it/110x110/9c27b0/fff?text=Dilip" class="img-fluid" />
-                                <h3>@Html.DisplayFor(modelItem => item.WorkName)</h3>
-                                <p>@Html.DisplayFor(modelItem => item.OriginWorkName)</p>
-                                @if (item.Type.TypeName == "Скульптура")
-                                {
-                                    <p style="color: rgb(67, 210, 28)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Литература")
-                                {
-                                    <p style="color: rgb(10, 88, 218)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Музыка")
-                                {
-                                    <p style="color: rgb(255, 0, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Кинематограф")
-                                {
-                                    <p style="color: rgb(233, 148, 15)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Архитектура")
-                                {
-                                    <p style="color: rgb(166, 16, 237)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Фотография")
-                                {
-                                    <p style="color: rgb(250, 28, 94)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Живопись")
-                                {
-                                    <p style="color: rgb(13, 188, 234)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Театр")
-                                {
-                                    <p style="color: rgb(10, 255, 180)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Хореография")
-                                {
-                                    <p style="color: rgb(179, 255, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                                @if (item.Type.TypeName == "Современное искусство")
-                                {
-                                    <p style="color: rgb(223, 55, 186)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                                }
-                            </div>
-                            <div class="team-back">
-                                <span>
-                                    @*@Html.DisplayFor(modelItem => item.Description)*@
-                                    @Html.ActionLink(item.Description, "Reade", new { item.Id })
-                                </span>
-                            </div>
+</p>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="column">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="our-team-main">
+                        <div class="team-front">
+                            <img src="~/image/555.jpeg" class="img-fluid" />
+                            <h3>@Html.DisplayFor(modelItem => item.WorkName)</h3>
+                            <p>@Html.DisplayFor(modelItem => item.OriginWorkName)</p>
+                            @if (item.Type.TypeName == "Скульптура")
+                            {
+                                <p style="color: rgb(67, 210, 28)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Литература")
+                            {
+                                <p style="color: rgb(10, 88, 218)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Музыка")
+                            {
+                                <p style="color: rgb(255, 0, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Кинематограф")
+                            {
+                                <p style="color: rgb(233, 148, 15)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Архитектура")
+                            {
+                                <p style="color: rgb(166, 16, 237)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Фотография")
+                            {
+                                <p style="color: rgb(250, 28, 94)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Живопись")
+                            {
+                                <p style="color: rgb(13, 188, 234)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Театр")
+                            {
+                                <p style="color: rgb(10, 255, 180)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Хореография")
+                            {
+                                <p style="color: rgb(179, 255, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                            @if (item.Type.TypeName == "Современное искусство")
+                            {
+                                <p style="color: rgb(223, 55, 186)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                            }
+                        </div>
+                        <div class="team-back">
+                            <span>
+                                @Html.ActionLink(item.Description, "ViewArt", new { item.Id })
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
+</div>
 
-    Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

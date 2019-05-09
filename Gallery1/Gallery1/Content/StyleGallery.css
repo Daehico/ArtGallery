@@ -1,6 +1,5 @@
-﻿body
-{
-	background:rgba(198, 225, 255, 0.42);
+﻿body {
+    background: -webkit-linear-gradient(top, rgba(26, 165, 241, 0.25) 0%, rgba(28, 67, 182, 0.52) 100%);
 }
 
 h1
@@ -10,9 +9,13 @@ h1
 	font-weight:300;
 }
 
+.search {
+    width: 300px;
+}
+
 .our-team-main {
     width: 350px;
-    height: 280px;
+    height: 360px;
     border-bottom: 5px #323233 solid;
     background: #fff;
     text-align: center;
@@ -26,9 +29,9 @@ h1
 
 .our-team-main img
 {
-	border-radius:50%;
-	margin-bottom:20px;
-	width: 90px;
+	margin-bottom:30px;
+	width: 320px;
+    height: 180px;
 }
 
 .our-team-main h3
@@ -59,7 +62,8 @@ h1
     position: relative;
     z-index: 10;
     background: #fff;
-    padding: 15px;
+    padding-bottom: 35px;
+    padding-top:25px;
     bottom: 0px;
     transition: all 0.5s ease;
     display: inline-block;

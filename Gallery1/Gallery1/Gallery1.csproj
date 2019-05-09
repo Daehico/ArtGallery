@@ -135,25 +135,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IArtRepository.cs" />
+    <Compile Include="Abstract\IAuthorRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\UserControlController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArtContext.cs" />
     <Compile Include="Models\ArtWork.cs" />
     <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\AuthorizationUser.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\EditModel.cs" />
+    <Compile Include="Models\GenerUser.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\School.cs" />
+    <Compile Include="Models\PhotoArt.cs" />
+    <Compile Include="Models\PhotoLocation.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Technique.cs" />
     <Compile Include="Models\Type.cs" />
     <Compile Include="Models\TypeLocation.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,14 +174,23 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\menu.css" />
+    <Content Include="Content\LoginSheet.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\StyleAdminPage.css" />
+    <Content Include="Content\StyleAdminPageCreate.css" />
     <Content Include="Content\StyleGallery.css" />
     <Content Include="Content\StyleMenuBar.css" />
+    <Content Include="Content\StylePersonalPage.css" />
+    <Content Include="Content\StyleSearch.css" />
+    <Content Include="Content\StyleSlyder.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\2.png" />
+    <Content Include="image\3.png" />
+    <Content Include="image\4.ico" />
+    <Content Include="image\555.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -199,9 +221,29 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Navigation\Menu.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Admin\ListArts.cshtml" />
+    <Content Include="Views\Admin\EditArts.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Home\ViewArt.cshtml" />
+    <Content Include="Views\Admin\DeleteArt.cshtml" />
+    <Content Include="Views\Admin\CreateType.cshtml" />
+    <Content Include="Views\Admin\CreateAuthor.cshtml" />
+    <Content Include="Views\Admin\CreateGenre.cshtml" />
+    <Content Include="Views\Admin\CreateTechnique.cshtml" />
+    <Content Include="Views\Admin\CreateLocation.cshtml" />
+    <Content Include="Views\Admin\CreateCity.cshtml" />
+    <Content Include="Views\Admin\CreateCountry.cshtml" />
+    <Content Include="Views\User\LogOff.cshtml" />
+    <Content Include="Views\UserControl\ListUser.cshtml" />
+    <Content Include="Views\UserControl\EditUser.cshtml" />
+    <Content Include="Views\Admin\UploadPhoto.cshtml" />
+    <Content Include="Views\Author\ListOfAuthors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="files\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -18,6 +18,7 @@ namespace Gallery1.Models
         public string Sex { get; set; }
 
         public ICollection<ArtWork> ArtWorks { get; set; }
+        public IEnumerable<Author> authors;
 
         public Author()
         {

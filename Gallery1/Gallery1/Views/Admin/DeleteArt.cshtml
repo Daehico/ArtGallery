@@ -1,0 +1,14 @@
+﻿@model Gallery1.Models.ArtWork
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление арта</h2>
+
+<div class="form-group">
+    <label>Название:</label>
+    @Html.DisplayFor(model => model.WorkName, new { @class = "form-control" })
+</div>
+
+<input type="submit" value="Удалить" />

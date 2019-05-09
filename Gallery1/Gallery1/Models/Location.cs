@@ -25,5 +25,9 @@ namespace Gallery1.Models
         //внешний ключ для города, где хранится работа
         public int? CityId { get; set; }
         public City City { get; set; }
+
+        //внешний ключ для фото локации
+        public int? PhotoLocationId { get; set; }
+        public PhotoLocation PhotoLocation { get; set; }
     }
 }
