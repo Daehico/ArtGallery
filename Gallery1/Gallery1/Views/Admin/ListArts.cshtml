@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Gallery1.Models.ArtWork>
+﻿                                                                                                                                                                                                                                                                                                                                                @model IEnumerable<Gallery1.Models.ArtWork>
 
 @{
     ViewBag.Title = "ListArts";
@@ -11,9 +11,6 @@
 </p>
 <table class="table table-striped table-condensed table-bordered">
     <tr>
-        <th class="text-center">
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
         <th class="text-center">
             @Html.DisplayNameFor(model => model.WorkName)
         </th>
@@ -54,9 +51,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td class="text-center">
-            @item.Id
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.WorkName)
         </td>

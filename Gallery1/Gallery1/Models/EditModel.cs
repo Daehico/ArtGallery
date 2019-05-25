@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
+using System.Data.OleDb;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Gallery1.Models
 {
@@ -13,7 +16,7 @@ namespace Gallery1.Models
         public IEnumerable<PhotoArt> PhotoArts { get; set; }
         public IEnumerable<ArtWork> ArtWork { get; set; }
         public IEnumerable<Author> Authors { get; set; }
-
+      
         //дроп автор
         public Nullable<int> AuthorId { get; set; }
         public List<Author> AuthorsCollection { get; set; }
@@ -37,5 +40,6 @@ namespace Gallery1.Models
 
         public Nullable<int> PhotoArtId { get; set; }
         public List<PhotoArt> PhotoArtCollection { get; set; }
+      
     }
 }

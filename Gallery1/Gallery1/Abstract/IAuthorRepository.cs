@@ -9,6 +9,6 @@ namespace Gallery1.Abstract
 {
     public interface IAuthorRepository
     {
-        IEnumerable<Author> authors { get; }
+        IEnumerable<Author> Authors { get; }
     }
 }

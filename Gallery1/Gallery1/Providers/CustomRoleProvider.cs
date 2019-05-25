@@ -43,10 +43,15 @@ namespace Gallery1.Providers
             {
                 // Получаем пользователя
                 User user = db.Users.FirstOrDefault(u => u.Login == username);
-                if (user != null && user.Role != null)
+                if (user != null /*&& user.Role != null*/)
                 {
                     // получаем роль
-                    roles = new string[] { user.Role.Name };
+                    Role userRole = db.Roles.Find(user.RoleId);
+                    if(userRole != null)
+                    {
+                        roles = new string[] { user.Role.Role_Type };
+                    }
+                    
                 }
                 return roles;
             }
@@ -59,15 +64,21 @@ namespace Gallery1.Providers
 
         public override bool IsUserInRole(string username, string roleName)
         {
+            bool outputResult = false;
+
             using (UserContext db = new UserContext())
             {
                 // Получаем пользователя
                 User user = db.Users.FirstOrDefault(u => u.Login == username);
-
-                if (user != null && user.Role != null && user.Role.Name == roleName)
-                    return true;
-                else
-                    return false;
+                if (user != null/* && user.Role != null && user.Role.Role_Type == roleName*/)
+                {
+                    Role userRole = db.Roles.Find(user.RoleId);
+                    if(userRole !=null && userRole.Role_Type == roleName)
+                    {
+                        outputResult = true;
+                    }
+                }
+                return outputResult;
             }
         }
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)

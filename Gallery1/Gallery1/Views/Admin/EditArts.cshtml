@@ -88,6 +88,9 @@
                                     @Html.DropDownListFor(model => Model.AuthorId, new SelectList(Model.AuthorsCollection, "Id", "NameAuthor"), new { @class = "form-control" })
                                     <label>Введите id автора</label>
                                     @Html.TextBoxFor(model => model.ArtWorks.AuthorId, new { @class = "form-control" })
+
+                                    @Html.DropDownList("authorsList", new SelectList(Model.AuthorsCollection, "Id", "NameAuthor"))
+
                                 </div>
                             </div>
                         </div>
@@ -163,7 +166,7 @@
                             <hr>
                             <div class="container">
                                 <div class="fluid-row">
-                                    @Html.ActionLink("Создать новое фото  ", "UploadPhoto")<img src="~/image/4.ico" /><br />
+                                    @Html.ActionLink("Создать новое фото","UploadPhoto", "PhotoArt")<img src="~/image/4.ico" /><br />
                                     <label>Все возможные фото</label>
                                     @Html.DropDownListFor(model => Model.PhotoArtId, new SelectList(Model.PhotoArtCollection, "Id", "PhotoName"), new { @class = "form-control" })
                                     <label>Введите id локации</label>

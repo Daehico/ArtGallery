@@ -1,0 +1,138 @@
+﻿/*** Материал подготовлен сайтом roothelp.ru ***/
+
+#content {
+    width: 600px;
+    margin: 50px auto 0px;
+    font-size: 22px;
+}
+
+/*** Выдвигающееся боковое меню | JavaScript ***/
+
+#menu {
+    position: fixed;
+    right: -190px;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    z-index: 2000;
+}
+
+    #menu.menu-open {
+        right: 0;
+    }
+
+#menuContent {
+    position: absolute;
+    left: 60px;
+    background: #2b271a;
+    width: 200px;
+    height: 100%;
+}
+
+#menu a {
+    margin-left: 40px;
+    color: #00ffff;
+    display: block;
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+    #menu a:hover {
+        color: #00ff40;
+    }
+
+#menu {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#menuToggle {
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.45);
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+    #menuToggle:hover {
+        color: #00ff40;
+        background: rgba(0,0,0,0.2);
+        -webkit-transition: all .1s ease-in-out;
+        -moz-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+        -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+    }
+
+
+
+
+/*** Оформление ***/
+
+body {
+    background: #757575;
+}
+
+.rh img {
+    margin: 0 auto;
+    display: block;
+}
+
+.rh span {
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 41px;
+}
+
+    .rh span > p {
+        color: #f1f3e9;
+        font-size: 15px;
+    }
+
+hr {
+    border: 0.4px solid #fff;
+    background: #fff;
+    color: #fff;
+    width: 30%;
+    margin: 12px auto;
+}
+
+.rh ul {
+    list-style: none;
+    margin: 5px auto;
+    width: 54%;
+}
+
+    .rh ul li {
+        float: left;
+        margin: 20px;
+    }
+
+        .rh ul li a {
+            text-decoration: none;
+        }
+
+            .rh ul li a span {
+                padding: 13px;
+            }
+
+                .rh ul li a span:hover {
+                    background: #c7c9bd;
+                    padding: 8px;
+                    border: 1px dashed #fff;
+                }

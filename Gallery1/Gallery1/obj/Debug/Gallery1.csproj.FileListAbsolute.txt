@@ -93,6 +93,8 @@ C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.dll
 C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.Mvc.dll
 C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.xml
 C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\PagedList.Mvc.xml
+C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\System.Web.Providers.dll
+C:\Users\A-Servis\source\repos\Gallery1\Gallery1\bin\System.Web.Providers.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\Gallery1.dll.config
 H:\ArtGallery\Gallery1\Gallery1\bin\Gallery1.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\Gallery1.pdb
@@ -155,6 +157,7 @@ H:\ArtGallery\Gallery1\Gallery1\bin\System.Diagnostics.DiagnosticSource.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Helpers.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Mvc.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Optimization.dll
+H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Providers.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Razor.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.WebPages.Deployment.dll
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.WebPages.dll
@@ -164,6 +167,7 @@ H:\ArtGallery\Gallery1\Gallery1\bin\EntityFramework.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\EntityFramework.SqlServer.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\PagedList.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\PagedList.Mvc.xml
+H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Providers.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Helpers.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Mvc.xml
 H:\ArtGallery\Gallery1\Gallery1\bin\System.Web.Optimization.xml

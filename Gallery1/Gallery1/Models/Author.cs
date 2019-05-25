@@ -8,6 +8,8 @@ namespace Gallery1.Models
 {
     public class Author
     {
+        private int i;
+
         public int Id { get; set; }
         public string NameAuthor { get; set; }
         public string Pseudonum { get; set; }
@@ -22,6 +24,11 @@ namespace Gallery1.Models
         public Author()
         {
             ArtWorks = new List<ArtWork>();
+        }
+
+        public Author(int i)
+        {
+            this.i = i;
         }
     }
 }

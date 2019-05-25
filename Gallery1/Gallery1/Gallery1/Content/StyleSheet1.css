@@ -1,0 +1,29 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Playball'); 
+
+.image {
+    text-align: right;
+    top: 130px;
+    left: 15%;
+    position: absolute;
+}
+
+.image img{
+    width: 60%;
+    height: 60%;
+}
+
+h2{
+    margin-left: 50px;
+}
+
+h5{
+    margin-left: 80px;
+    color:Highlight;
+}
+h4 {
+    margin-left: 2%;
+    font-size: 48px;
+    color: darkblue;
+    font-family: 'Playball', cursive;
+}

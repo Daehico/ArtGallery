@@ -1,0 +1,19 @@
+﻿@model Gallery1.Models.Type
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Новый автор</h2>
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        <label>Название типа:</label>
+        @Html.TextBoxFor(model => model.TypeName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Дата зарождения:</label>
+        @Html.TextBoxFor(model => model.TypeDate, new { @class = "form-control", rows = 6 })
+    </div>
+    <input type="submit" value="Добавить" class="btn btn-primary" />
+}

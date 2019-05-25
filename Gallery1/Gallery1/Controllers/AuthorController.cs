@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gallery1.Models;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,13 @@ namespace Gallery1.Controllers
 {
     public class AuthorController : Controller
     {
-        // GET: Author
-        public ActionResult ListOfAuthors()
+        ArtContext db = new ArtContext();
+        public int pageSize = 15;
+        public ActionResult ListOfAuthors(int? page, string searchBy, string author)
         {
-            return View();
+            var arts = db.Authors;
+            RedirectToAction("Index", "Home", new { searchBy = "Author" });
+            return View(arts.ToList().ToPagedList(page ?? 1, pageSize));
         }
     }
 }

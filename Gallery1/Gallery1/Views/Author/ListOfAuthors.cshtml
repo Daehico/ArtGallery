@@ -1,10 +1,14 @@
-﻿
-@{
-    ViewBag.Title = "ListOfAuthors";
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Gallery1.Models.Author>
+
+<h2>Список авторов</h2>
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li>@Html.ActionLink(item.NameAuthor, "Index", "Home")</li>
+    </ul>
 }
-
-<h2>ListOfAuthors</h2>
-
-@model Gallery1.Models.Author
-
-@foreach()
+<br />
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("ListOfAuthors", new { page }))

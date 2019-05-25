@@ -17,8 +17,18 @@
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
                     <li>@Html.ActionLink("О программе", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Админ.панель(арты)", "ListArts", "Admin")</li>
-                    <li>@Html.ActionLink("Админ.панель(пользователи)", "ListUser", "UserControl")</li>
+                    <li>@Html.ActionLink("Авторы", "ListOfAuthors", "Author")</li>
+
+                    @if (this.User.IsInRole("Модератор"))
+                    {
+                        <li>@Html.ActionLink("Админ.панель(арты)", "ListArts", "Admin")</li>
+                    }
+
+                    @if (this.User.IsInRole("Администратор"))
+                    {
+                        <li>@Html.ActionLink("Админ.панель(арты)", "ListArts", "Admin")</li>
+                        <li>@Html.ActionLink("Админ.панель(пользователи)", "ListUser", "UserControl")</li>
+                    }
                 </ul>
                 <ul class="nav navbar-nav navbar-right" style="margin-right:15px">
                     @if (this.User.Identity.IsAuthenticated)

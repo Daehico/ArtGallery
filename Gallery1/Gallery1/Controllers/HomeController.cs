@@ -37,6 +37,12 @@ namespace Gallery1.Controllers
                     .Where(x => x.Type.TypeName.StartsWith(search) || search == null)
                     .ToList().ToPagedList(page ?? 1, pageSize));
             }
+            if(searchBy == "Author")
+            {
+                return View(arts
+                    .Where(x => x.Author.NameAuthor.StartsWith(search) || search == null)
+                    .ToList().ToPagedList(page ?? 1, pageSize));
+            }
             else //пользовательский поиск по названию
             {
                 return View(arts

@@ -43,31 +43,37 @@
     </div>
     <div class="first_col">
         <div class="form-group">
+            @Html.ActionLink("Создать нового автора  ", "CreateAuthor")<br />
             <label>Автор:</label>
             @Html.TextBoxFor(model => model.AuthorId, new { @class = "form-control" })
         </div>
 
         <div class="form-group">
+            @Html.ActionLink("Создать новый тип  ", "CreateType")<br />
             <label>Тип:</label>
             @Html.TextBoxFor(model => model.TypeId, new { @class = "form-control" })
         </div>
 
         <div class="form-group">
+            @Html.ActionLink("Создать новый жанр  ", "CreateGenre")<br />
             <label>Жанр:</label>
             @Html.TextBoxFor(model => model.GenreId, new { @class = "form-control" })
         </div>
 
         <div class="form-group">
+            @Html.ActionLink("Создать новую технологию  ", "CreateTechnique")<br />
             <label>Техника:</label>
             @Html.TextBoxFor(model => model.TechniqueId, new { @class = "form-control" })
         </div>
 
         <div class="form-group">
+            @Html.ActionLink("Создать новую локацию  ", "CreateLocation")<br />
             <label>Локация:</label>
             @Html.TextBoxFor(model => model.LocationId, new { @class = "form-control" })
         </div>
 
         <div class="form-group">
+            @Html.ActionLink("Создать новое фото", "UploadPhoto", "PhotoArt")<br />
             <label>Фото:</label>
             @Html.TextBoxFor(model => model.PhotoArtId, new { @class = "form-control" })
         </div>

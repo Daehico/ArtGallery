@@ -1,0 +1,29 @@
+﻿<link href="~/Content/StyleSheet2.css" rel="stylesheet" />
+<link href="~/Content/StyleSheet3.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="~/Scripts/JavaScript.js"></script>
+
+@model IEnumerable<string>
+
+<nav id="menu">
+    <div id="menuContent">
+        @Html.ActionLink("Все типы", "Index", "Home", null,
+ new { @class = "" })
+
+        @foreach (var link in Model)
+        {
+            @Html.RouteLink(link, new
+            {
+                controller = "Home",
+                action = "Index",
+                type = link,
+            }, new
+            {
+                @class =""
+                +(link == ViewBag.SelectedTypes ? "btn-primary" : "")
+            })
+        }
+    </div>
+    <!-- Кнопка меню -->
+    <div id="menuToggle"><i class="fa fa-bars"></i></div>
+</nav>

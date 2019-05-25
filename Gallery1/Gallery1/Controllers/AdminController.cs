@@ -26,6 +26,10 @@ namespace Gallery1.Controllers
         public ActionResult EditArts(int Id)
         {
             EditModel model = new EditModel();
+            SelectList authorsList = new SelectList(db.Authors, "Id", "NameAuthor");
+            ViewBag.AuthorId = authorsList;
+            ViewData["authorsList"] = new SelectList(db.Authors, "Id", "NameAuthor");
+
             using (ArtContext db = new ArtContext())
             {
                 model.ArtWorks = db.ArtWorks.FirstOrDefault(a => a.Id == Id);
@@ -42,9 +46,14 @@ namespace Gallery1.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditArts(EditModel model, HttpPostedFileBase upload, int Id)
+        public ActionResult EditArts(Author author, EditModel model, HttpPostedFileBase upload, int Id)
         {
-                if (upload != null)
+            string selectedAuthor = Request.Form["authorsList"].ToString();
+          
+
+            SelectList authorsList = new SelectList(db.Authors, "Id", "NameAuthor");
+            //ViewBag.AuthorId = authorsList;
+            if (upload != null)
                 {
                     string fileName = System.IO.Path.GetFileName(upload.FileName);
                     upload.SaveAs(Server.MapPath("~/Files/" + fileName));
@@ -62,10 +71,19 @@ namespace Gallery1.Controllers
                 }
                 else
                 {
+                if(selectedAuthor != null)
+                {
+                    model.ArtWorks.AuthorId = Int32.Parse(selectedAuthor);        
+                }
                     db.Entry(model.ArtWorks).State = EntityState.Modified;
                     db.SaveChanges();
                 }
-            
+           if (author != null)
+            {
+                db.Entry(model.ArtWorks).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
             return RedirectToAction("ListArts");
         }
 
@@ -78,7 +96,7 @@ namespace Gallery1.Controllers
         [HttpPost]
         public ActionResult UploadPhoto(PhotoArt photo, HttpPostedFileBase upload)
         {
-            if(upload != null)
+            if (upload != null)
             {
                 string fileName = System.IO.Path.GetFileName(upload.FileName);
                 upload.SaveAs(Server.MapPath("~/Files/" + fileName));
@@ -221,5 +239,7 @@ namespace Gallery1.Controllers
             db.SaveChanges();
             return RedirectToAction("ListArts");
         }
+
+
     }
 }

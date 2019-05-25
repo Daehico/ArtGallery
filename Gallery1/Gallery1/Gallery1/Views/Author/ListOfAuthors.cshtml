@@ -1,0 +1,48 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "ListOfAuthors";
+}
+
+<h2>ListOfAuthors</h2>
+
+@using PagedList.Mvc;
+@model IEnumerable<Gallery1.Models.Author>
+
+@foreach (var item in Model)
+{
+    <td class="text-center">
+        @item.Id
+    </td>
+    <td>
+
+       
+        @Html.DisplayFor(modelItem => item.NameAuthor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pseudonum)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sex)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Education)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfBirth)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfDeath)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Biography)
+    </td>
+    <td>
+        @Html.ActionLink("Найти арты автора", "ListOfAuthors", new { item.NameAuthor })
+    </td>
+
+
+}

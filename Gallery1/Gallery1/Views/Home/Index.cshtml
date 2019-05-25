@@ -134,71 +134,74 @@
             </button>
         </div>
     }
-
 </p>
-<div class="container">
-    @foreach (var item in Model)
-    {
-        <div class="column">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="our-team-main">
-                        <div class="team-front">
-                            <img src="~/image/555.jpeg" class="img-fluid" />
-                            <h3>@Html.DisplayFor(modelItem => item.WorkName)</h3>
-                            <p>@Html.DisplayFor(modelItem => item.OriginWorkName)</p>
-                            @if (item.Type.TypeName == "Скульптура")
-                            {
-                                <p style="color: rgb(67, 210, 28)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Литература")
-                            {
-                                <p style="color: rgb(10, 88, 218)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Музыка")
-                            {
-                                <p style="color: rgb(255, 0, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Кинематограф")
-                            {
-                                <p style="color: rgb(233, 148, 15)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Архитектура")
-                            {
-                                <p style="color: rgb(166, 16, 237)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Фотография")
-                            {
-                                <p style="color: rgb(250, 28, 94)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Живопись")
-                            {
-                                <p style="color: rgb(13, 188, 234)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Театр")
-                            {
-                                <p style="color: rgb(10, 255, 180)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Хореография")
-                            {
-                                <p style="color: rgb(179, 255, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                            @if (item.Type.TypeName == "Современное искусство")
-                            {
-                                <p style="color: rgb(223, 55, 186)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
-                            }
-                        </div>
-                        <div class="team-back">
-                            <span>
-                                @Html.ActionLink(item.Description, "ViewArt", new { item.Id })
-                            </span>
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="column">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="our-team-main">
+                            <div class="team-front">
+                                <img src="~/files/@Html.DisplayFor(modelItem => item.PhotoArt.PhotoName)" class="img-fluid" />
+                                <h3>@Html.DisplayFor(modelItem => item.WorkName)</h3>
+                                <p>@Html.DisplayFor(modelItem => item.OriginWorkName)</p>
+                                @if (item.Type.TypeName == "Скульптура")
+                                {
+                                    <p style="color: rgb(67, 210, 28)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Литература")
+                                {
+                                    <p style="color: rgb(10, 88, 218)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Музыка")
+                                {
+                                    <p style="color: rgb(255, 0, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Кинематограф")
+                                {
+                                    <p style="color: rgb(233, 148, 15)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Архитектура")
+                                {
+                                    <p style="color: rgb(166, 16, 237)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Фотография")
+                                {
+                                    <p style="color: rgb(250, 28, 94)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Живопись")
+                                {
+                                    <p style="color: rgb(13, 188, 234)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Театр")
+                                {
+                                    <p style="color: rgb(10, 255, 180)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Хореография")
+                                {
+                                    <p style="color: rgb(179, 255, 0)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                                @if (item.Type.TypeName == "Современное искусство")
+                                {
+                                    <p style="color: rgb(223, 55, 186)">@Html.DisplayFor(modelItem => item.Type.TypeName)</p>
+                                }
+                            </div>
+                            <div class="team-back">
+                                <span>
+                                    @Html.ActionLink(item.Description, "ViewArt", new { item.Id })
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
-
+        }
+    </div>
+}
 Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
