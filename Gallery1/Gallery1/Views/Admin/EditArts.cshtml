@@ -62,7 +62,7 @@
                                 <div class="fluid-row">
                                     @Html.ActionLink("Создать новый тип  ", "CreateType")<img src="~/image/4.ico" /><br />
                                     <label>Все возможные типы</label>
-                                    @Html.DropDownListFor(model => Model.TypeId, new SelectList(Model.TypesCollection, "Id", "TypeName"), new { @class = "form-control" })
+                                    @Html.DropDownListFor(model => Model.TypeId, new SelectList(Model.TypesCollection, "Id", "TypeName") , new { @class = "form-control" })
                                     <label>Введите id типа</label>
                                     @Html.TextBoxFor(model => model.ArtWorks.TypeId, new { @class = "form-control" })
                                     <a href="#" class="tip-right" title="Tooltip on the right side">

@@ -51,7 +51,18 @@ namespace Gallery1.Controllers
             string selectedAuthor = Request.Form["authorsList"].ToString();
           
 
-            SelectList authorsList = new SelectList(db.Authors, "Id", "NameAuthor");
+            var authorsList = new List<SelectListItem>(); 
+
+            foreach (var authors in authorsList)
+            {
+                authorsList.Add(new SelectListItem()
+                {
+                    Text = model.ArtWorks.Author.NameAuthor,
+                    Selected = model.ArtWorks.AuthorId == 2 ? true : false
+                });
+            }
+
+
             //ViewBag.AuthorId = authorsList;
             if (upload != null)
                 {
