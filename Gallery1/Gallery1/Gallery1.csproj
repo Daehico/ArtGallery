@@ -144,7 +144,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AuctionController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
@@ -246,7 +245,7 @@
     <Content Include="Views\UserControl\EditUser.cshtml" />
     <Content Include="Views\PhotoArt\UploadPhoto.cshtml" />
     <Content Include="Views\Author\ListOfAuthors.cshtml" />
-    <Content Include="Views\Auction\auction.cshtml" />
+    <Content Include="Views\Home\auction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

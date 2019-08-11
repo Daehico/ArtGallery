@@ -9,6 +9,7 @@ namespace Gallery1.Models
     public class ArtWork
     {
         public int Id { get; set; }
+        public IEnumerable<ArtWork> artWorks;
 
         [Display(Name = "Название")]
         [Required(ErrorMessage = "Пожалуйста, введите название арта")]

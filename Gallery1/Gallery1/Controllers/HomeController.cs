@@ -78,5 +78,42 @@ namespace Gallery1.Controllers
 
             return View();
         }
+
+        public ActionResult auction(int? page, string searchBy, string search, string type)
+        {
+            var arts = db.ArtWorks
+               .Include(a => a.Author)
+               .Include(a => a.Type)
+               .Include(a => a.Location.TypeLocation)
+               .Include(a => a.Location.City.Country)
+               .Include(a => a.PhotoArt)
+               .Include(a => a.Genre);
+            //кнопки жанров
+            if (type != null)
+            {
+                return View(arts.Where(x => x.Type.TypeName.StartsWith(type))
+                .ToList().ToPagedList(page ?? 1, pageSize));
+            }
+            //пользовательский поиск по жанру
+            if (searchBy == "Type")
+            {
+                return View(arts
+                    .Where(x => x.Type.TypeName.StartsWith(search) || search == null)
+                    .ToList().ToPagedList(page ?? 1, pageSize));
+            }
+            if (searchBy == "Author")
+            {
+                return View(arts
+                    .Where(x => x.Author.NameAuthor.StartsWith(search) || search == null)
+                    .ToList().ToPagedList(page ?? 1, pageSize));
+            }
+            else //пользовательский поиск по названию
+            {
+                return View(arts
+                    .Where(x => x.WorkName.StartsWith(search) || search == null)
+                    .ToList().ToPagedList(page ?? 1, pageSize));
+            }
+            return View();
+        }
     }
 }
