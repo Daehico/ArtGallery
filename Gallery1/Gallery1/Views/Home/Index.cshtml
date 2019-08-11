@@ -142,8 +142,7 @@
 <div class="container">
     @foreach (var item in Model)
     {
-        if (item.Price != 0)
-        {
+     
 
 
             <div class="column">
@@ -205,7 +204,7 @@
                 </div>
             </div>
         }
-    }
+    
 </div>
 }
 Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
